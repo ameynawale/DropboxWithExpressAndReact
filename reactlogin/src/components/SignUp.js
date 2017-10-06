@@ -1,0 +1,108 @@
+import React, {Component} from 'react';
+import {Route, withRouter} from 'react-router-dom';
+//import * as API from '../api/API';
+import PropTypes from 'prop-types';
+
+class SignUp extends Component{
+
+    static propTypes = {
+        handleSignUp: PropTypes.func.isRequired
+    };
+
+    state = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    };
+
+    componentWillMount(){
+        this.setState({
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: ''
+        });
+    }
+
+    render(){
+        return(
+            <div className="row justify-content-md-center">
+                <div className="col-md-3">
+                    <form>
+                        <div className="form-group">
+                            <h1>Sign Up</h1>
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                type="text"
+                                label="firstName"
+                                placeholder="First Name"
+                                value={this.state.firstName}
+                                onChange={(event) => {
+                                    this.setState({
+                                        firstName: event.target.value
+                                    });
+                                }}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                type="text"
+                                label="lastName"
+                                placeholder="Last Name"
+                                value={this.state.lastName}
+                                onChange={(event) => {
+                                this.setState({
+                                    lastName: event.target.value
+                                });
+                            }}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                type="email"
+                                label="email"
+                                placeholder="Email"
+                                value={this.state.email}
+                                onChange={(event) => {
+                                this.setState({
+                                    email: event.target.value
+                                });
+                            }}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <input
+                                className="form-control"
+                                type="password"
+                                label="password"
+                                placeholder="Password"
+                                value={this.state.password}
+                                onChange={(event) => {
+                                this.setState({
+                                    password: event.target.value
+                                });
+                            }}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <button
+                                className="btn btn-primary"
+                                type="button"
+                                onClick={() => this.props.handleSignUp(this.state)}>                                password: event.target.value
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default SignUp;
+//export default withRouter(SignUp);
