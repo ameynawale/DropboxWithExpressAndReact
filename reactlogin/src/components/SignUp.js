@@ -93,7 +93,7 @@ class SignUp extends Component{
                             <button
                                 className="btn btn-primary"
                                 type="button"
-                                onClick={() => this.props.handleSignUp(this.state)}>                                password: event.target.value
+                                onClick={() => this.props.handleSignUp(this.state)}>
                                 Sign Up
                             </button>
                         </div>

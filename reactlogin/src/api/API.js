@@ -37,8 +37,15 @@ export const doSignUp = (payload) =>
             return error;
         });
 
-export const getImages = () =>
-    fetch(`${api}/files/`)
+export const getImages = (payload) =>
+    fetch(`${api}/files/`, {
+        method: 'GET',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
         .then(res => res.json())
         .catch(error => {
             console.log("This is error.");

@@ -11,17 +11,20 @@ class NewerHomePage extends Component {
     state = {
         isLoggedIn: false,
         message: '',
-        username: ''
+        username: '',
+        filelist: ''
     };
 
     handleSubmit = (userdata) => {
         API.doLogin(userdata)
             .then((status) => {
                 if (status === 201) {
+
                     this.setState({
                         isLoggedIn: true,
                         message: "Welcome to my App..!!",
                         username: userdata.username
+
                     });
                     this.props.history.push("/welcome");
                 } else if (status === 401) {

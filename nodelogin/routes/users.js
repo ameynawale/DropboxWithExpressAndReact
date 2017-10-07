@@ -3,6 +3,9 @@ var router = express.Router();
 var mysql = require('./mysql');
 var multer = require('multer');
 var glob = require('glob');
+var path = require('path');
+const fs = require('fs');
+
 
 
 /* GET users listing. */
@@ -15,7 +18,7 @@ var storage = multer.diskStorage({
         cb(null, './public/uploads/')
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + '.jpeg')
+        cb(null, file.originalname)
     }
 });
 
@@ -23,9 +26,9 @@ var upload = multer({storage:storage});
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-    var resArr = [];
+    /*var resArr = [];
 
-    glob("public/uploads/*.jpeg", function (er, files) {
+    glob("public/uploads/*", function (er, files) {
 
         var resArr = files.map(function (file) {
             var imgJSON = {};
@@ -36,11 +39,24 @@ router.get('/', function (req, res, next) {
 
         console.log(resArr);
         res.status(200).send(resArr);
+    });*/
+    var response = "";
+    testFolder = req.param('email');
+    console.log(testFolder);
+    fs.readdir(testFolder, function (err, files)
+    {
+        console.log(files.length);
+        console.log(files);
+        for(var i=0;i<files.length;i++)
+        {
+            response += files[i]+"<br>";
+        }
+        res.status(201).send(response);
     });
 
 });
 
-router.post('/upload', upload.single('mypic'), function (req, res, next) {
+router.post('/upload', upload.any(), function (req, res, next) {
     console.log(req.body);
     console.log(req.file);
     res.status(204).end();
@@ -73,13 +89,23 @@ router.post('/doSignUp', function (req,res)
     // check user already exists
     var postUser="insert into users (firstName,lastName,email,pass) values ('"+req.body.firstName+"','"+req.param("lastName")+"','"+req.param("email")+"','"+req.param("password")+"')";
     console.log("Query is:"+postUser);
-
+    var userfolder = '../public/uploads/'+req.param("email");
+    const dirPath1 = path.join(__dirname,userfolder);
+    const mkdirSync = function (dirPath) {
+        try {
+            fs.mkdirSync(dirPath)
+        } catch (err) {
+            if (err.code !== 'EEXIST') throw err
+        }
+    }
     mysql.fetchData(function(err,results){
         if(err){
             throw err;
         }
         else
         {
+            mkdirSync(dirPath1);
+
                res.status(201).json({message: "Sign Up successful!"});
         }
     },postUser)}

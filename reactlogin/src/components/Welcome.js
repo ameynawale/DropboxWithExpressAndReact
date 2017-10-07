@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link,withRouter} from 'react-router-dom';
 //import PropTypes from 'prop-types';
 import PropTypes from 'prop-types';
-import ImageGridList from "./ImageGridList";
+//import ImageGridList from "./ImageGridList";
 import TextField from 'material-ui/TextField';
 import Typography from 'material-ui/Typography';
 import * as API from '../api/API';
@@ -23,7 +23,7 @@ class Welcome extends Component {
                     API.getImages()
                         .then((data) => {
                             this.setState({
-                                images: data
+                                filelist: data
                             });
                         });
                 }
@@ -37,27 +37,27 @@ class Welcome extends Component {
 */
     state = {
         username : '',
-        images: []
+        filelist: ''
     };
 
-    /*
+
     componentWillMount(){
         this.setState({
             username : this.props.username
         });
         //document.title = `Welcome, ${this.state.username} !!`;
-    }*/
+    }
 
     /*componentDidMount(){
         document.title = `Welcome, ${this.state.username} !!`;
     }*/
 
     componentDidMount() {
-        API.getImages()
+        API.getImages(this.props.email)
             .then((data) => {
                 console.log(data);
                 this.setState({
-                    images: data
+                    filelist: data
                 });
             });
     };
@@ -78,7 +78,7 @@ class Welcome extends Component {
                         name="mypic"
                         onChange={this.handleFileUpload}
                     />
-                    <ImageGridList images={this.state.images}/>
+                    <div>{this.state.filelist}</div>
                 </div>
             </div>
         )
