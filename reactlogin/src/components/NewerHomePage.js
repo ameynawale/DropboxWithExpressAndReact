@@ -4,27 +4,24 @@ import * as API from '../api/API';
 import Login from "./Login";
 import Message from "./Message";
 import Welcome from "./Welcome";
-import SignUp from "./SignUp";
+import Signup from "./Signup";
 
 class NewerHomePage extends Component {
 
     state = {
         isLoggedIn: false,
         message: '',
-        username: '',
-        filelist: ''
+        username: ''
     };
 
     handleSubmit = (userdata) => {
         API.doLogin(userdata)
             .then((status) => {
                 if (status === 201) {
-
                     this.setState({
                         isLoggedIn: true,
                         message: "Welcome to my App..!!",
                         username: userdata.username
-
                     });
                     this.props.history.push("/welcome");
                 } else if (status === 401) {
@@ -35,51 +32,42 @@ class NewerHomePage extends Component {
                 }
             });
     };
-
     handleSignUp = (userdata) => {
-        API.doSignUp(userdata)
+        API.doSignup(userdata)
             .then((status) => {
                 if (status === 201) {
                     this.setState({
                         isLoggedIn: true,
-                        message: "You have signed up successfully! You may log in here now.",
+                        message: "Registration successful!! please login",
                         username: userdata.username
                     });
                     this.props.history.push("/login");
                 } else if (status === 401) {
                     this.setState({
                         isLoggedIn: false,
-                        message: "Wrong username or password. Try again..!!"
+                        message: "Enter valid information. Try again..!!"
                     });
                 }
             });
     };
 
-
-
     render() {
         return (
             <div className="container-fluid">
-                <Route exact path="/previousHome" render={() => (
-                    <div>
-                        <Message message="You have landed on my App !!"/>
-                        <button className="btn btn-success" onClick={() => {
-                            this.props.history.push("/login");
-                        }}>
-                            Login
-                        </button>
-                    </div>
-                )}/>
-
                 <Route exact path="/" render={() => (
                     <div>
-                        <SignUp handleSignUp={this.handleSignUp}/>
-                        <Message message={this.state.message}/>
-                        <button className="btn btn-success" onClick={() => {
-                            this.props.history.push("/login");
-                        }}>
-                            Login
-                        </button>
+                    <Login handleSubmit={this.handleSubmit}/>
+                    <Message message={this.state.message}/>
+                        <Message message="Welcome to DropBox !!"/>                      
+                            
+                        
+                       
+                        
+                            <button className="btn btn-success" onClick={() => {
+                                this.props.history.push("/signup");
+                            }}>
+                             New users? SignUp
+                            </button>
                     </div>
                 )}/>
 
@@ -89,6 +77,12 @@ class NewerHomePage extends Component {
                         <Message message={this.state.message}/>
                     </div>
                 )}/>
+                <Route exact path="/signup" render={() => (
+                        <div>
+                            <Signup handleSignUp={this.handleSignUp}/>
+                            <Message message={this.state.message}/>
+                        </div>
+                    )}/>
                 <Route exact path="/welcome" render={() => (
                     <Welcome username={this.state.username}/>
                 )}/>

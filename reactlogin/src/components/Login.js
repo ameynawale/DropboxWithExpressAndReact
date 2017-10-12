@@ -9,13 +9,15 @@ class Login extends Component {
 
     state = {
         username: '',
-        password: ''
+        password: '',
+              
     };
 
     componentWillMount(){
         this.setState({
             username: '',
-            password: ''
+            password: '',
+            
         });
     }
 
@@ -30,7 +32,7 @@ class Login extends Component {
                         <div className="form-group">
                             <input
                                 className="form-control"
-                                type="text"
+                                type="email"
                                 label="Username"
                                 placeholder="Enter Username"
                                 value={this.state.username}
@@ -61,10 +63,11 @@ class Login extends Component {
                                 className="btn btn-primary"
                                 type="button"
                                 onClick={() => this.props.handleSubmit(this.state)}>
-                                Submit
+                                Login
                             </button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         );

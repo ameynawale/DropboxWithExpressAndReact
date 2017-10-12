@@ -19,10 +19,8 @@ export const doLogin = (payload) =>
             console.log("This is error");
             return error;
         });
-
-
-export const doSignUp = (payload) =>
-    fetch(`${api}/users/doSignUp`, {
+export const doSignup = (payload) =>
+    fetch(`${api}/users/doSignup`, {
         method: 'POST',
         headers: {
             ...headers,
@@ -36,16 +34,9 @@ export const doSignUp = (payload) =>
             console.log("This is error");
             return error;
         });
-
-export const getImages = (payload) =>
-    fetch(`${api}/files/`, {
-        method: 'GET',
-        headers: {
-            ...headers,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
+    
+ export const getImages = () =>
+    fetch(`${api}/files/`)
         .then(res => res.json())
         .catch(error => {
             console.log("This is error.");
@@ -55,6 +46,17 @@ export const getImages = (payload) =>
 export const uploadFile = (payload) =>
     fetch(`${api}/files/upload`, {
         method: 'POST',
+        body: payload
+    }).then(res => {
+        return res.status;
+    }).catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+export const downloadFile = (payload) =>
+    fetch(`${api}/files/download`, {
+        method: 'GET',
         body: payload
     }).then(res => {
         return res.status;

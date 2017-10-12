@@ -9,6 +9,7 @@ class HomePage extends Component {
             password: ''
         },
         isLoggedIn: false,
+        isSignedUp: false
         message: ''
     };
 
@@ -24,6 +25,23 @@ class HomePage extends Component {
                     this.setState({
                         isLoggedIn: false,
                         message: "Wrong username or password. Try again..!!"
+                    });
+                }
+            });
+    };
+  
+    handleSignup = () => {
+        API.dosignup(this.state.userdata)
+            .then((status) => {
+                if (status === 201) {
+                    this.setState({
+                        isSignedUp: true,
+                        message: "you have been registered. Try login"
+                    });
+                } else if (status === 401) {
+                    this.setState({
+                        isSignup: false,
+                        message: "Please enter valid details"
                     });
                 }
             });
