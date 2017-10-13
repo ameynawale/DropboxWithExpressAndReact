@@ -69,14 +69,15 @@ class ImageGridList extends Component {
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        //this.handleShare = this.handleShare.bind(this);
+        this.handleShare = this.handleShare.bind(this);
     }
 
     openModal(item) {
         this.setState({
             modalIsOpen: true,
             activeItemName: item,
-            activeItemId: item.id
+            activeItemId: item.id,
+            emails: ''
         });
     }
 
@@ -89,6 +90,25 @@ class ImageGridList extends Component {
         this.setState({modalIsOpen: false});
     }
 
+    handleShare = (userdata) => {
+        API.doShare(userdata)
+            .then((status) => {
+                if (status === 201) {
+                    this.setState({
+                        modalIsOpen: true,
+                        message: "Share successful!!",
+                        username: userdata.username,
+                        activeItemName: userdata.activeItemName
+                    });
+                    //this.props.history.push("/welcome");
+                } else if (status === 401) {
+                    this.setState({
+                        isLoggedIn: false,
+                        message: "Enter valid information. Try again..!!"
+                    });
+                }
+            });
+    };
 
     /*static propTypes = {
         handleShare: PropTypes.func.isRequired
@@ -109,6 +129,15 @@ class ImageGridList extends Component {
         this.setState
     }*/
     //handleClose = () => this.setState({isShowingModal: false})
+
+    componentWillMount(item){
+        this.setState({
+            modalIsOpen: false,
+            activeItemName: '',
+            activeItemId: null,
+            emails: ''
+        })
+    }
 
     render(){
         const classes = this.props;
@@ -136,7 +165,7 @@ class ImageGridList extends Component {
                                     onAfterOpen={this.afterOpenModal}
                                     onRequestClose={this.closeModal}
                                     style={customStyles}
-                                    contentLabel="Example Modal"
+                                    //contentLabel="Example Modal"
                                     itemId={this.state.activeItemId}
                                     itemName={this.state.activeItemName}
                                 >
@@ -159,7 +188,7 @@ class ImageGridList extends Component {
                                         <button
                                             className="btn btn-primary"
                                             type="button"
-                                            onClick={() => this.props.handleShare(this.state)}>
+                                            onClick={() => this.handleShare(this.state)}>
                                             Share
                                         </button>
                                     </form>

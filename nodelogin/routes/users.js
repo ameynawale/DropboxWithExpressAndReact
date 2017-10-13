@@ -79,7 +79,11 @@ router.get('/download/:filename', function (req, res, next) {
             connection.release();
             if(!err) {
             	console.log(getUser);
-                res.status(201).json({message:"valid login"});
+            	if(rows.length>0){
+                    res.status(201).json({message:"valid login"});}
+                else{
+            	    res.status(401).json({message: "invalid login"});
+                }
             }
         });
         connection.on('error', function(err) {
@@ -170,7 +174,40 @@ router.post('/doSignup', function (req, res, next) {
     //     res.status(401).json({message: "Login failed"});
     // }
 
-}); 
+});
+
+router.post('/doShare', function (req, res, next) {
+
+    var emails = req.body.emails;
+    var email = emails.split(',');
+
+
+
+        mysql.getConnection(function (err, connection) {
+            if (err) {
+                connection.release();
+                throw err;
+            }
+            for(i = 0; i < email.length; i++) {
+
+                var getUser = "insert into sharedFolders(folderName, email, isDeleted) values ('" + req.body.activeItemName + "','" + email[i] + "',1)";
+                console.log("Query is:" + getUser);
+
+                connection.query(getUser);
+            }
+            connection.release();
+                if (!err) {
+                    res.status(201).json({message: "Sharing successful"});
+                }
+            connection.on('error', function (err) {
+                throw err;
+                return;
+            });
+        });
+
+});
+
+
 router.post('/upload', upload.any(), function (req, res, next) {
     console.log(req.body);
     console.log(req.file);

@@ -34,7 +34,23 @@ export const doSignup = (payload) =>
             console.log("This is error");
             return error;
         });
-    
+
+export const doShare = (payload) =>
+    fetch(`${api}/users/doShare`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
  export const getImages = () =>
     fetch(`${api}/files/`)
         .then(res => res.json())
