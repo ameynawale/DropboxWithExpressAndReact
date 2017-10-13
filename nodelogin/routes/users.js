@@ -70,27 +70,23 @@ router.get('/download/:filename', function (req, res, next) {
 	 var reqPassword = req.body.password;
 	var getUser="select * from users where email='"+reqUsername+"' and pass='" + reqPassword +"'";
 	console.log("Query is:"+getUser);
-	mysql.fetchData(function(err,results){
-		if(err){
-			throw err;
-		}
-		else 
-		{
-			if(results.length > 0){
-				console.log("valid Login");
-				
-			            res.status(201).json({message:"valid login"});
-			       
-			}
-			else {    
-				
-				console.log("Invalid Login");
-				
-			            res.status(401).json({message: "invalid login"});
-			        
-			}
-		}  
-	},getUser);
+	mysql.getConnection(function(err,connection){
+        if (err) {
+            connection.release();
+            throw err;
+        }
+        connection.query(getUser,function(err,rows){
+            connection.release();
+            if(!err) {
+            	console.log(getUser);
+                res.status(201).json({message:"valid login"});
+            }
+        });
+        connection.on('error', function(err) {
+            throw err;
+            return;
+        });
+    });
    
 
 });
@@ -107,10 +103,10 @@ router.post('/doSignup', function (req, res, next) {
  /*   var theUser = users.filter(function(user){
         return user.username === reqUsername;
     }); */
-    var getUser="insert into users(username, password, firstname, lastname) values ('"+req.param("email")+"','" + req.param("password")+"','" + req.param("firstname")+"','" + req.param("lastname")+"')";
+    var getUser="insert into users(username, password, firstname, lastname) values ('"+req.params("email")+"','" + req.params("password")+"','" + req.params("firstname")+"','" + req.params("lastname")+"')";
 	console.log("Query is:"+getUser);
 	
-	var Ufolder = '../public/uploads/'+req.param("email");
+	var Ufolder = '../public/uploads/'+req.params("email");
 	const dir = path.join(__dirname,Ufolder);
 	const mkdirSync = function (dirPath) {
 		  try {
@@ -119,7 +115,7 @@ router.post('/doSignup', function (req, res, next) {
 		    if (err.code !== 'EEXIST') throw err
 		  }
 		};
-	mysql.fetchData(function(err,results){
+	/*mysql.fetchData(function(err,results){
 		if(err){
 			throw err;
 		}
@@ -135,7 +131,28 @@ router.post('/doSignup', function (req, res, next) {
 			}
 			
 			    
-			},getUser);
+			},getUser);*/
+
+    mysql.getConnection(function(err,connection){
+        if (err) {
+            connection.release();
+            throw err;
+        }
+        connection.query(getUser,function(err,rows){
+            connection.release();
+            if(!err) {
+                console.log("The registration has been successful, please log in");
+                console.log("valid Login");
+                mkdirSync(dir);
+
+                res.status(201).json({message:"The registration has been successful, please log in"});
+            }
+        });
+        connection.on('error', function(err) {
+            throw err;
+            return;
+        });
+    });
 		
     // Check the password
   //  if(theUser.length === 1){
