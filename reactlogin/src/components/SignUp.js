@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Signup extends Component {
+class SignUp extends Component {
 
     static propTypes = {
         handleSignUp: PropTypes.func.isRequired
@@ -107,4 +107,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default SignUp;

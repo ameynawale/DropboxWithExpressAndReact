@@ -4,7 +4,7 @@ import * as API from '../api/API';
 import Login from "./Login";
 import Message from "./Message";
 import Welcome from "./Welcome";
-import Signup from "./Signup";
+import SignUp from "./SignUp";
 
 class NewerHomePage extends Component {
 
@@ -79,7 +79,7 @@ class NewerHomePage extends Component {
                 )}/>
                 <Route exact path="/signup" render={() => (
                         <div>
-                            <Signup handleSignUp={this.handleSignUp}/>
+                            <SignUp handleSignUp={this.handleSignUp}/>
                             <Message message={this.state.message}/>
                         </div>
                     )}/>
