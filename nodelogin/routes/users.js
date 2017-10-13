@@ -103,10 +103,10 @@ router.post('/doSignup', function (req, res, next) {
  /*   var theUser = users.filter(function(user){
         return user.username === reqUsername;
     }); */
-    var getUser="insert into users(username, password, firstname, lastname) values ('"+req.params("email")+"','" + req.params("password")+"','" + req.params("firstname")+"','" + req.params("lastname")+"')";
+    var getUser="insert into users(email, pass, firstName, lastName) values ('"+req.body.email+"','" + req.body.password+"','" + req.body.firstname+"','" + req.body.lastname+"')";
 	console.log("Query is:"+getUser);
 	
-	var Ufolder = '../public/uploads/'+req.params("email");
+	var Ufolder = '../public/uploads/'+req.body.email;
 	const dir = path.join(__dirname,Ufolder);
 	const mkdirSync = function (dirPath) {
 		  try {
