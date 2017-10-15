@@ -42,6 +42,8 @@ export const doShare = (payload) =>
             ...headers,
             'Content-Type': 'application/json'
         },
+        //credentials: 'include',
+        //mode: 'cors',
         body: JSON.stringify(payload)
     }).then(res => {
         return res.status;
@@ -59,13 +61,26 @@ export const doShare = (payload) =>
             return error;
         });
 
+export const GetFiles = (payload) =>
+    fetch(`${api}/users/files`,{
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }).then(res => res.json())
+        .catch(error => {
+            console.log("This is error.");
+            return error;
+        });
+
 export const uploadFile = (payload) =>
     fetch(`${api}/files/upload`, {
         method: 'POST',
         body: payload
-    }).then(res => {
-        return res.status;
-    }).catch(error => {
+    }).then(res => res.json())
+        .catch(error => {
             console.log("This is error");
             return error;
         });

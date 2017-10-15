@@ -84,7 +84,7 @@ class NewerHomePage extends Component {
                         </div>
                     )}/>
                 <Route exact path="/welcome" render={() => (
-                    <Welcome username={this.state.username}/>
+                    <Welcome username={this.state.username} route={this.props.history.push}/>
                 )}/>
             </div>
         );

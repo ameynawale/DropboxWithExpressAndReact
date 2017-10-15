@@ -8,55 +8,92 @@ import TextField from 'material-ui/TextField';
 import Typography from 'material-ui/Typography';
 
 class Welcome extends Component {
-	
+
+
+
 	 handleFileUpload = (event) => {
 
 	        const payload = new FormData();
 
 	        payload.append('mypic', event.target.files[0]);
+	        payload.append('email',this.state.username);
 
 	        API.uploadFile(payload)
-	            .then((status) => {
-	                if (status === 204) {
-	                    API.getImages()
+	            .then((res) => {
+	                if (res.status === 204) {
+	                    window.location.reload();
+                        this.getUserFiles(res.email);
+	                    /*API.getImages()
 	                        .then((data) => {
 	                            this.setState({
 	                                images: data
 	                            });
-	                        });
+	                        });*/
 	                }
 	            });
 
 	    };
 
+    getUserFiles = (userdata) => {
+        API.GetFiles(userdata)
+            .then((data) => {
+                //console.log(data);
+                this.setState({
+                    images: data
+                });
+            });
+    };
+
     static propTypes = {
         username: PropTypes.string.isRequired
     };
 
-    state = {
+    /*state = {
         username : '',
         	images: []
-    };
+    };*/
+
+    constructor(props){
+        super(props);
+        this.state = {
+            username : '',
+            images: [],
+            folderpath : ''
+        };
+
+        this.getUserFiles = this.getUserFiles.bind(this);
+    }
 
    componentWillMount(){
         this.setState({
-            username : this.props.username
-            
+            username : this.props.username,
+            //getUserFiles: this.getUserFiles
         }); 
         //document.title = `Welcome, ${this.state.username} !!`;
+       //this.getUserFiles(this.state);
     }
 
     componentDidMount(){
     	
         document.title = `Welcome, ${this.state.username} !!`;
-        API.getImages()
+        this.getUserFiles(this.state);
+        /*API.getImages()
         .then((data) => {
             console.log(data);
             this.setState({
                 images: data
             });
-        });
+        });*/
+       /* API.GetFiles(userdata)
+            .then((data) => {
+                console.log(data);
+                this.setState({
+                    images: data
+                });
+            });*/
     }
+
+
 
     render(){
         return(
@@ -77,7 +114,7 @@ class Welcome extends Component {
                         name="mypic"
                         onChange={this.handleFileUpload}
                     />
-                    <ImageGridList items={this.state.images}/>
+                    <ImageGridList items={this.state.images} route={this.props.route}/>
                     <Link to="/login">Logout</Link>
                 </div>
             </div>

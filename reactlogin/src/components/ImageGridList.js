@@ -191,6 +191,7 @@ class ImageGridList extends Component {
                                             onClick={() => this.handleShare(this.state)}>
                                             Share
                                         </button>
+                                        
                                     </form>
                                 </Modal>
 

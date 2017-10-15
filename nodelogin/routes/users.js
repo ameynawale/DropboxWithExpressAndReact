@@ -5,11 +5,17 @@ var mysql = require('./mysql');
 var multer = require('multer');
 var glob = require('glob');
 var path = require('path');
+var cookieParser = require('cookie-parser');
+
 const fs = require('fs');
+const fse = require('fs-extra');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/uploads/')
+        //var path = './public/uploads/'+req.body.email+'/';
+        //console.log('this is storage destination' + req.body.email);
+        //let path = './public/uploads/'+req.body.email+'/';
+        cb(null, './public/uploads/');
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname)
@@ -57,6 +63,28 @@ router.get('/', function (req, res, next) {
 
 });
 
+router.post('/files', function (req, res, next) {
+    var resArr = [];
+    var reqUsername = req.body.username;
+    var pathtoFiles ="public/uploads/"+reqUsername+"/*";
+    console.log(pathtoFiles);
+    glob(pathtoFiles, function (er, files) {
+
+
+        var resArr = files.map(function (file) {
+            var imgJSON = {};
+            imgJSON = file.split('/')[3];
+            imgJSON.cols = 2  ;
+            return imgJSON;
+        });
+
+        console.log(resArr);
+        res.status(200).send(resArr);
+    });
+
+});
+
+
 router.get('/download/:filename', function (req, res, next) {
 	var filepath = "./public/uploads/"+req.param("filename");
 	//console.log("test");
@@ -64,7 +92,8 @@ router.get('/download/:filename', function (req, res, next) {
      res.download(filepath);
 
 });
-    router.post('/doLogin', function (req, res, next) {
+
+router.post('/doLogin', function (req, res, next) {
 	console.log("i am here");
 	 var reqUsername = req.body.username;
 	 var reqPassword = req.body.password;
@@ -78,8 +107,14 @@ router.get('/download/:filename', function (req, res, next) {
         connection.query(getUser,function(err,rows){
             connection.release();
             if(!err) {
-            	console.log(getUser);
+            	//console.log(getUser);
             	if(rows.length>0){
+            	    console.log(req.cookies);
+                    console.log(res.cookies);
+            	    //req.setHeader('Set-Cookie','email = a@b.com');
+            	    res.setHeader('Set-Cookie','email=a@b.com; path=http://localhost:3000/');
+            	    console.log(res.cookies);
+                    //res.setHeader('Set-Cookie','path=/');
                     res.status(201).json({message:"valid login"});}
                 else{
             	    res.status(401).json({message: "invalid login"});
@@ -181,7 +216,7 @@ router.post('/doShare', function (req, res, next) {
     var emails = req.body.emails;
     var email = emails.split(',');
 
-
+    //console.log(req.mySession.email);
 
         mysql.getConnection(function (err, connection) {
             if (err) {
@@ -209,9 +244,30 @@ router.post('/doShare', function (req, res, next) {
 
 
 router.post('/upload', upload.any(), function (req, res, next) {
-    console.log(req.body);
-    console.log(req.file);
-    res.status(204).end();
+    var email = req.body.email;
+    //console.log('this is the file name'+req.file);
+    var pathtoFiles ="public/uploads/*";
+    var resArr;
+    glob(pathtoFiles, function (er, files) {
+
+
+         resArr = files.map(function (file) {
+            var imgJSON = {};
+            imgJSON = file.split('/')[2];
+            imgJSON.cols = 2  ;
+            return imgJSON;
+        });
+    console.log('first file'+resArr[0]);
+    var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/'+resArr[0];
+    var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/'+req.body.email+'/'+resArr[0];
+    console.log(sourcePath);
+    console.log(destPath);
+        fse.move(sourcePath, destPath, function (err) {
+            if (err) return console.error(err)
+            console.log("success!");
+        });
+    });
+    res.status(204).json({email: email});
 });
 
 module.exports = router;

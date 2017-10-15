@@ -10,14 +10,14 @@ class Login extends Component {
     state = {
         username: '',
         password: '',
-              
+        folderpath: ''
     };
 
     componentWillMount(){
         this.setState({
             username: '',
             password: '',
-            
+            folderpath: ''
         });
     }
 
@@ -38,7 +38,8 @@ class Login extends Component {
                                 value={this.state.username}
                                 onChange={(event) => {
                                     this.setState({
-                                        username: event.target.value
+                                        username: event.target.value,
+                                        folderpath: event.target.value
                                     });
                                 }}
                             />
