@@ -85,8 +85,8 @@ router.post('/files', function (req, res, next) {
 });
 
 
-router.get('/download/:filename', function (req, res, next) {
-	var filepath = "./public/uploads/"+req.param("filename");
+router.get('/download/:username/:filename', function (req, res, next) {
+	var filepath = "./public/uploads/"+req.param("username")+'/'+req.param("filename");
 	//console.log("test");
 	//console.log(req.param("filename"));
      res.download(filepath);
@@ -215,7 +215,8 @@ router.post('/doShare', function (req, res, next) {
 
     var emails = req.body.emails;
     var email = emails.split(',');
-
+    var sourcefile = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.username + '/' + req.body.activeItemName;
+    var destfile;
     //console.log(req.mySession.email);
 
         mysql.getConnection(function (err, connection) {
@@ -224,11 +225,15 @@ router.post('/doShare', function (req, res, next) {
                 throw err;
             }
             for(i = 0; i < email.length; i++) {
-
+                var destfile = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + email[i] + '/' + req.body.activeItemName;
                 var getUser = "insert into sharedFolders(folderName, email, isDeleted) values ('" + req.body.activeItemName + "','" + email[i] + "',1)";
                 console.log("Query is:" + getUser);
-
                 connection.query(getUser);
+
+                fse.copy(sourcefile, destfile, err => {
+                    if (err) return console.error(err)
+                    console.log('success!')
+                });
             }
             connection.release();
                 if (!err) {

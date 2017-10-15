@@ -77,7 +77,8 @@ class ImageGridList extends Component {
             modalIsOpen: true,
             activeItemName: item,
             activeItemId: item.id,
-            emails: ''
+            emails: '',
+            username: this.props.username
         });
     }
 
@@ -117,7 +118,8 @@ class ImageGridList extends Component {
     static propTypes = {
         classes: PropTypes.object.isRequired,
         items: PropTypes.array.isRequired,
-        handleShare: PropTypes.func.isRequired
+        handleShare: PropTypes.func.isRequired,
+        username: PropTypes.string.isRequired
     };
 
     /* state = {
@@ -156,7 +158,7 @@ class ImageGridList extends Component {
                             <div>
 
 
-                                <a href= {'http://localhost:3001/files/download/'+tile} download>{tile} </a>
+                                <a href= {'http://localhost:3001/files/download/'+this.props.username+'/'+tile} download>{tile} </a>
                                 <button onClick={() => this.openModal(tile)}>Share</button>
                                 <button onClick={() => this.openModal(tile)}>Star</button>
 
@@ -171,6 +173,7 @@ class ImageGridList extends Component {
                                 >
 
                                     <h6 ref={subtitle => this.subtitle = subtitle}>{this.state.activeItemName}</h6>
+                                    <h6 ref={subtitle => this.subtitle = subtitle}>{this.state.username}</h6>
                                     <button onClick={this.closeModal}>close</button>
                                     <form>
                                         <input
