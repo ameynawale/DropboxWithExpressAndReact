@@ -251,22 +251,36 @@ router.post('/upload', upload.any(), function (req, res, next) {
     glob(pathtoFiles, function (er, files) {
 
 
-         resArr = files.map(function (file) {
+        resArr = files.map(function (file) {
             var imgJSON = {};
             imgJSON = file.split('/')[2];
-            imgJSON.cols = 2  ;
+            imgJSON.cols = 2;
             return imgJSON;
         });
+
     console.log('first file'+resArr[0]);
-    var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/'+resArr[0];
-    var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/'+req.body.email+'/'+resArr[0];
-    console.log(sourcePath);
-    console.log(destPath);
-        fse.move(sourcePath, destPath, function (err) {
-            if (err) return console.error(err)
-            console.log("success!");
-        });
-    });
+    for(i = 0; i < resArr.length; i++)
+    {
+        console.log('this is outside if'+resArr[i].search(".com"));
+        if(resArr[i].search(".com")===-1) {
+            var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + resArr[i];
+            var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.email + '/' + resArr[i];
+            console.log('this is inside if'+resArr[i]);
+            console.log(sourcePath);
+            console.log(destPath);
+            fse.move(sourcePath, destPath, function (err) {
+                if (err) return console.error(err)
+                console.log("success!");
+            });
+            break;
+
+        };
+    }});
+
+        /*var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + resArr[0];
+        var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.email + '/' + resArr[0];*/
+
+
     res.status(204).json({email: email});
 });
 

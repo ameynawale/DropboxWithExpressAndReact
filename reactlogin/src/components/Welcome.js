@@ -21,8 +21,15 @@ class Welcome extends Component {
 	        API.uploadFile(payload)
 	            .then((res) => {
 	                if (res.status === 204) {
-	                    window.location.reload();
-                        this.getUserFiles(res.email);
+                        API.GetFiles(res.email)
+                            .then((data) => {
+                                //console.log(data);
+                                this.setState({
+                                    images: data
+                                });
+                            });
+	                    //window.location.reload();
+                        //this.getUserFiles(res.email);
 	                    /*API.getImages()
 	                        .then((data) => {
 	                            this.setState({

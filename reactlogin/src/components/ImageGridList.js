@@ -158,7 +158,7 @@ class ImageGridList extends Component {
 
                                 <a href= {'http://localhost:3001/files/download/'+tile} download>{tile} </a>
                                 <button onClick={() => this.openModal(tile)}>Share</button>
-
+                                <button onClick={() => this.openModal(tile)}>Star</button>
 
                                 <Modal
                                     isOpen={this.state.modalIsOpen}
@@ -191,7 +191,12 @@ class ImageGridList extends Component {
                                             onClick={() => this.handleShare(this.state)}>
                                             Share
                                         </button>
-                                        
+                                        <button
+                                            className="btn btn-primary"
+                                            type="button"
+                                            onClick={() => this.handleShare(this.state)}>
+                                            Star
+                                        </button>
                                     </form>
                                 </Modal>
 
