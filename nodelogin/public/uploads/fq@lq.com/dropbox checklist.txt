@@ -1,9 +1,0 @@
-dropbox checklist:
-
-password encryption
-answers to the questions
-sharing
-starring
-reload the page after file upload
-readme
-running on another computer
