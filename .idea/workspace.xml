@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7be4480-2d85-4459-b9e8-e4ce748642b6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/public/uploads/fname@lname.com/abc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/public/uploads/fname@lname.com/abc2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/public/uploads/ fq1@lq1.com/abc2.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/package-lock.json" afterPath="$PROJECT_DIR$/nodelogin/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/package.json" afterPath="$PROJECT_DIR$/nodelogin/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/routes/users.js" afterPath="$PROJECT_DIR$/nodelogin/routes/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js" afterPath="$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/src/components/Welcome.js" afterPath="$PROJECT_DIR$/reactlogin/src/components/Welcome.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +23,8 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nodelogin/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="90" column="41" lean-forward="true" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+            <state relative-caret-position="175">
+              <caret line="115" column="97" lean-forward="false" selection-start-line="115" selection-start-column="97" selection-end-line="115" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -34,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/nodelogin/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -43,7 +43,7 @@
       <file leaf-file-name="Welcome.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
+            <state relative-caret-position="2875">
               <caret line="123" column="115" lean-forward="false" selection-start-line="123" selection-start-column="115" selection-end-line="123" selection-end-column="115" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -56,7 +56,7 @@
       <file leaf-file-name="ImageGridList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
+            <state relative-caret-position="1775">
               <caret line="160" column="92" lean-forward="false" selection-start-line="160" selection-start-column="92" selection-end-line="160" selection-end-column="92" />
               <folding />
             </state>
@@ -76,7 +76,7 @@
       <file leaf-file-name="NewerHomePage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
+            <state relative-caret-position="1975">
               <caret line="85" column="60" lean-forward="false" selection-start-line="85" selection-start-column="60" selection-end-line="85" selection-end-column="60" />
               <folding />
             </state>
@@ -276,12 +276,12 @@
       <workItem from="1507909969849" duration="9449000" />
       <workItem from="1507928830322" duration="48842000" />
       <workItem from="1508091726717" duration="605000" />
-      <workItem from="1508092489025" duration="15636000" />
+      <workItem from="1508092489025" duration="18067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155103000" />
+    <option name="totallyTimeSpent" value="157534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1054" extended-state="6" />
@@ -662,14 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="85" column="60" lean-forward="false" selection-start-line="85" selection-start-column="60" selection-end-line="85" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nodelogin/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -691,14 +683,22 @@
     <entry file="file://$PROJECT_DIR$/nodelogin/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1975">
+          <caret line="85" column="60" lean-forward="false" selection-start-line="85" selection-start-column="60" selection-end-line="85" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
+        <state relative-caret-position="2875">
           <caret line="123" column="115" lean-forward="false" selection-start-line="123" selection-start-column="115" selection-end-line="123" selection-end-column="115" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -709,7 +709,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
+        <state relative-caret-position="1775">
           <caret line="160" column="92" lean-forward="false" selection-start-line="160" selection-start-column="92" selection-end-line="160" selection-end-column="92" />
           <folding />
         </state>
@@ -717,8 +717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nodelogin/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="90" column="41" lean-forward="true" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+        <state relative-caret-position="175">
+          <caret line="115" column="97" lean-forward="false" selection-start-line="115" selection-start-column="97" selection-end-line="115" selection-end-column="97" />
           <folding />
         </state>
       </provider>

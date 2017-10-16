@@ -6,9 +6,25 @@ var multer = require('multer');
 var glob = require('glob');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-
+var crypto = require('crypto');
 const fs = require('fs');
 const fse = require('fs-extra');
+var algorithm = 'aes-256-ctr',
+    password = 'd6F3Efeq';
+
+function encrypt(text){
+    var cipher = crypto.createCipher(algorithm,password);
+    var crypted = cipher.update(text,'utf8','hex');
+    crypted += cipher.final('hex');
+    return crypted;
+}
+
+function decrypt(text){
+    var decipher = crypto.createDecipher(algorithm,password);
+    var dec = decipher.update(text,'hex','utf8');
+    dec += decipher.final('utf8');
+    return dec;
+}
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -96,8 +112,8 @@ router.get('/download/:username/:filename', function (req, res, next) {
 router.post('/doLogin', function (req, res, next) {
 	console.log("i am here");
 	 var reqUsername = req.body.username;
-	 var reqPassword = req.body.password;
-	var getUser="select * from users where email='"+reqUsername+"' and pass='" + reqPassword +"'";
+	 var encryptedPassword = encrypt(req.body.password);
+	var getUser="select * from users where email='"+reqUsername+"' and pass='" +encryptedPassword+"'";
 	console.log("Query is:"+getUser);
 	mysql.getConnection(function(err,connection){
         if (err) {
@@ -142,7 +158,9 @@ router.post('/doSignup', function (req, res, next) {
  /*   var theUser = users.filter(function(user){
         return user.username === reqUsername;
     }); */
-    var getUser="insert into users(email, pass, firstname, lastname) values ('"+req.body.email+"','" + req.body.password+"','" + req.body.firstname+"','" + req.body.lastname+"')";
+    var encryptedPassword = encrypt(req.body.password);
+    console.log(encryptedPassword);
+    var getUser="insert into users(email, pass, firstname, lastname) values ('"+req.body.email+"','" +encryptedPassword+"','" + req.body.firstname+"','" + req.body.lastname+"')";
 	console.log("Query is:"+getUser);
 	
 	var Ufolder = '../public/uploads/'+req.body.email;
