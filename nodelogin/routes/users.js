@@ -233,7 +233,7 @@ router.post('/doShare', function (req, res, next) {
 
     var emails = req.body.emails;
     var email = emails.split(',');
-    var sourcefile = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.username + '/' + req.body.activeItemName;
+    var sourcefile = path.join(__dirname,'..','public','uploads',req.body.username,req.body.activeItemName);
     var destfile;
     //console.log(req.mySession.email);
 
@@ -243,7 +243,7 @@ router.post('/doShare', function (req, res, next) {
                 throw err;
             }
             for(i = 0; i < email.length; i++) {
-                var destfile = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + email[i] + '/' + req.body.activeItemName;
+                var destfile = path.join(__dirname,'..','public','uploads',email[i],req.body.activeItemName);
                 var getUser = "insert into sharedFolders(folderName, email, isDeleted) values ('" + req.body.activeItemName + "','" + email[i] + "',1)";
                 console.log("Query is:" + getUser);
                 connection.query(getUser);
@@ -286,8 +286,8 @@ router.post('/upload', upload.any(), function (req, res, next) {
     {
         console.log('this is outside if'+resArr[i].search(".com"));
         if(resArr[i].search(".com")===-1) {
-            var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + resArr[i];
-            var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.email + '/' + resArr[i];
+            var sourcePath = path.join(__dirname,'..','public','uploads',resArr[i]);
+            var destPath = path.join(__dirname,'..','public','uploads',req.body.email,resArr[i]);
             console.log('this is inside if'+resArr[i]);
             console.log(sourcePath);
             console.log(destPath);
