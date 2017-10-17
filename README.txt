@@ -3,6 +3,7 @@ Run the following queries in the MySQL DB:
 
 2. create table sharedFolders(id varchar(25), folderName varchar(50), email varchar(50), isStarred boolean, isDeleted boolean);
 
+3. Change the password of the database in the mysql file of nodelogin routes to your password so that it will successfully connect to the database at runtime.
 
 Go to nodelogin folder in command prompt and execute following command:
 1. npm install
