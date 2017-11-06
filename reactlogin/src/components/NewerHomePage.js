@@ -5,6 +5,9 @@ import Login from "./Login";
 import Message from "./Message";
 import Welcome from "./Welcome";
 import SignUp from "./SignUp";
+import LeftPanel from "./LeftPanel";
+import FileContainer from "./FileContainer";
+import PageHeader from "./PageHeader";
 
 class NewerHomePage extends Component {
 
@@ -53,21 +56,10 @@ class NewerHomePage extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div>
                 <Route exact path="/" render={() => (
                     <div>
-                    <Login handleSubmit={this.handleSubmit}/>
-                    <Message message={this.state.message}/>
-                        <Message message="Welcome to DropBox !!"/>                      
-                            
-                        
-                       
-                        
-                            <button className="btn btn-success" onClick={() => {
-                                this.props.history.push("/signup");
-                            }}>
-                             New users? SignUp
-                            </button>
+                        <Login handleSubmit={this.handleSubmit}/>
                     </div>
                 )}/>
 
@@ -84,7 +76,11 @@ class NewerHomePage extends Component {
                         </div>
                     )}/>
                 <Route exact path="/welcome" render={() => (
-                    <Welcome username={this.state.username} route={this.props.history.push}/>
+                    <div>
+                        <LeftPanel/>
+                        <Welcome username={this.state.username} route={this.props.history.push}/>
+
+                    </div>
                 )}/>
             </div>
         );

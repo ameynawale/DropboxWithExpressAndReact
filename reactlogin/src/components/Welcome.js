@@ -4,12 +4,31 @@ import PropTypes from 'prop-types';
 //import '/App.css';
 import * as API from '../api/API';
 import ImageGridList from "./ImageGridList";
+import '../stylesheets/RightPanel.css';
 import TextField from 'material-ui/TextField';
 import Typography from 'material-ui/Typography';
+import PageHeader from './PageHeader';
+import {withStyles} from 'material-ui/styles';
+import FileContainer from './FileContainer';
+import RightPanel from './RightPanel';
+import Starred from './Starred';
+import Recent from './Recent';
+import '../stylesheets/Welcome.css';
+
+
+const styles = ({
+    fileContainer: {
+        right: 0,
+        paddingLeft: 240,
+
+    }
+});
 
 class Welcome extends Component {
 
+    //var styles = ({
 
+    //});
 
 	 handleFileUpload = (event) => {
 
@@ -104,29 +123,17 @@ class Welcome extends Component {
 
     render(){
         return(
-            <div className="row justify-content-md-center">
-                <div className="col-md-12">
-                    <div className="alert alert-warning" role="alert">
-                        {this.state.username}, welcome to my App..!!
-                    </div>
-                        <Typography
-                        align={'center'}
-                        type="display3"
-                    >
-                        DropBox
-                    </Typography>
-                    <TextField
-                        className={'fileupload'}
-                        type="file"
-                        name="mypic"
-                        onChange={this.handleFileUpload}
-                    />
-                    <ImageGridList items={this.state.images} route={this.props.route} username={this.state.username}/>
-                    <Link to="/login">Logout</Link>
-                </div>
+            <div>
+                <PageHeader/>
+                <Starred/>
+                <Recent/>
+                <FileContainer items={this.state.images} route={this.props.route} username={this.state.username}/>
+
+                <RightPanel/>
+
             </div>
         )
     }
 }
 
-export default withRouter(Welcome);
+export default withStyles(styles)(Welcome);

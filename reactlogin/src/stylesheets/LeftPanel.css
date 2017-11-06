@@ -1,0 +1,37 @@
+.container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 240px;
+    min-width: 240px;
+    height: 100%;
+    background: #F7F9FA;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.nav-options{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 40px;
+}
+
+.nav-options-container{
+    overflow-y: auto;
+    position: absolute;
+    top: 96px;
+    bottom: 0;
+    width: 200px;
+}

@@ -1,0 +1,110 @@
+.page-header{
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    height: 76px;
+    z-index: 99;
+    font-size: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #d0d4d9;
+    -webkit-box-shadow: 0px 1px 1px #d0d4d9;
+    box-shadow: 0px 1px 1px #d0d4d9;
+}
+
+.logo-link{
+    display: inline-block;
+}
+
+.register-page-content {
+    padding-top: 126px;
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    padding-left: 250px;
+}
+
+.text-input{
+    border: 1px solid #bdc4c9;
+    font-size: 16px;
+    padding: 5px 6px;
+    width: 100%;
+    margin: 2px 0 5px;
+    min-height: 34px;
+    line-height: normal;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    display: block;
+}
+
+.login-form-container {
+    position: relative;
+    text-align: left;
+    width: 358px;
+}
+
+.login-button{
+    margin: 2px 0 5px;
+    min-height: 34px;
+    line-height: normal;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    margin-top: 16px;
+    padding: 6px 16px;
+}
+
+.login-or-register-img {
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 110px;
+    height: 300px;
+    width: 300px;
+    display: block;
+}
+
+.dropbox-logo__glyph {
+    z-index: 4;
+    vertical-align: middle;
+    height: 46px;
+    width: 46px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    display: inline-block;
+    -webkit-transition: all 300ms ease-in-out 0s;
+    transition: all 300ms ease-in-out 0s;
+}
+
+.master-head {
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    height: 76px;
+    z-index: 99;
+    font-size: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #d0d4d9;
+    -webkit-box-shadow: 0px 1px 1px #d0d4d9;
+    box-shadow: 0px 1px 1px #d0d4d9;
+}
+
+.dropbox-logo__type {
+    z-index: 3;
+    width: 120px;
+    height: 34px;
+    vertical-align: middle;
+    display: inline-block;
+    background: no-repeat center center;
+    position: relative;
+    top: 2px;
+    margin-left: 8px;
+    background-size: 120px auto;
+    -webkit-transition: all 300ms ease-in-out 0s;
+    transition: all 300ms ease-in-out 0s;
+}
