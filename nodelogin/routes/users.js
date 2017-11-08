@@ -5,10 +5,14 @@ var mysql = require('./mysql');
 var multer = require('multer');
 var glob = require('glob');
 var path = require('path');
+var passport = require('passport');
+require('./passport');
 var cookieParser = require('cookie-parser');
 var crypto = require('crypto');
 const fs = require('fs');
 const fse = require('fs-extra');
+var kafka = require('./kafka/client');
+
 var algorithm = 'aes-256-ctr',
     password = 'd6F3Efeq';
 
@@ -80,9 +84,33 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/files', function (req, res, next) {
-    var resArr = [];
+    kafka.make_request('list_topic',req.body.username, function(err,results){
+        console.log('in result');
+        console.log(results);
+        if(err){
+            res.status(500).send();
+        }
+        else
+        {
+            if(results.code == 200){
+                //  done(null,true,results/*{username: username, password: password}*/);
+                console.log(results.value);
+                var resarr = [];
+                var res1 = results.value;
+                //  if(res1.length!== 0)
+                //  {
+                resarr = res1.split('<br>');
+                res1.length = res1.length-1;
+                console.log(resarr);
+                //   }
+                res.status(201).send({files: resarr});
+            }
+        }
+    });
+
+    /*var resArr = [];
     var reqUsername = req.body.username;
-    var pathtoFiles ="public/uploads/"+reqUsername+"/*";
+    var pathtoFiles ="public/uploads/"+reqUsername+"/!*";
     console.log(pathtoFiles);
     glob(pathtoFiles, function (er, files) {
 
@@ -96,7 +124,7 @@ router.post('/files', function (req, res, next) {
 
         console.log(resArr);
         res.status(200).send(resArr);
-    });
+    });*/
 
 });
 
@@ -109,123 +137,43 @@ router.get('/download/:username/:filename', function (req, res, next) {
 
 });
 
-router.post('/doLogin', function (req, res, next) {
-	console.log("i am here");
-	 var reqUsername = req.body.username;
-	 var encryptedPassword = encrypt(req.body.password);
-	var getUser="select * from users where email='"+reqUsername+"' and pass='" +encryptedPassword+"'";
-	console.log("Query is:"+getUser);
-	mysql.getConnection(function(err,connection){
-        if (err) {
-            connection.release();
-            throw err;
+router.post('/doLogin', function (req, res) {
+    passport.authenticate('login', function(err, user) {
+        if(err) {
+            res.status(500).send();
         }
-        connection.query(getUser,function(err,rows){
-            connection.release();
-            if(!err) {
-            	//console.log(getUser);
-            	if(rows.length>0){
-            	    console.log(req.cookies);
-                    console.log(res.cookies);
-            	    //req.setHeader('Set-Cookie','email = a@b.com');
-            	    res.setHeader('Set-Cookie','email=a@b.com; path=http://localhost:3000/');
-            	    console.log(res.cookies);
-                    //res.setHeader('Set-Cookie','path=/');
-                    res.status(201).json({message:"valid login"});}
-                else{
-            	    res.status(401).json({message: "invalid login"});
-                }
-            }
-        });
-        connection.on('error', function(err) {
-            throw err;
-            return;
-        });
-    });
-   
 
+        if(!user) {
+            res.status(401).send();
+        }
+        req.session.user = user.username;
+        console.log(req.session.user);
+        console.log("session initilized");
+        return res.status(201).send({username:"test"});
+    })(req, res);
 });
 
 router.post('/doSignup', function (req, res, next) {
-
-  /*  var reqUsername = req.body.username;
-    var reqPassword = req.body.password;
-    var reqfirstname = req.body.firstname;
-    var reqlastname = req.body.lastname;
-    var reqemail = req.body.email;
-    var reqpassword = req.body.password; */
-    // Just checking if the username is in our user's array
- /*   var theUser = users.filter(function(user){
-        return user.username === reqUsername;
-    }); */
-    var encryptedPassword = encrypt(req.body.password);
-    console.log(encryptedPassword);
-    var getUser="insert into users(email, pass, firstname, lastname) values ('"+req.body.email+"','" +encryptedPassword+"','" + req.body.firstname+"','" + req.body.lastname+"')";
-	console.log("Query is:"+getUser);
-	
-	var Ufolder = '../public/uploads/'+req.body.email;
-	const dir = path.join(__dirname,Ufolder);
-	const mkdirSync = function (dirPath) {
-		  try {
-		    fs.mkdirSync(dirPath)
-		  } catch (err) {
-		    if (err.code !== 'EEXIST') throw err
-		  }
-		};
-	/*mysql.fetchData(function(err,results){
-		if(err){
-			throw err;
-		}
-		else 
-		{
-			
-			console.log("The registration has been successful, please log in");
-				console.log("valid Login");
-				mkdirSync(dir);
-				   
-			            res.status(201).json({message:"The registration has been successful, please log in"});
-			       
-			}
-			
-			    
-			},getUser);*/
-
-    mysql.getConnection(function(err,connection){
-        if (err) {
-            connection.release();
-            throw err;
+    passport.authenticate('signup', function(err, user) {
+        if(err) {
+            res.status(500).send();
         }
-        connection.query(getUser,function(err,rows){
-            connection.release();
-            if(!err) {
-                console.log("The registration has been successful, please log in");
-                console.log("valid Login");
-                mkdirSync(dir);
+        if(!user) {
+            res.status(401).send();
+        }
 
-                res.status(201).json({message:"The registration has been successful, please log in"});
-            }
-        });
-        connection.on('error', function(err) {
-            throw err;
-            return;
-        });
-    });
-		
-    // Check the password
-  //  if(theUser.length === 1){
-    //    theUser[0].password === reqPassword &&
-      //  res.status(201).json({message: "Login successful"}) ||
-       // res.status(401).json({message: "Login failed"});
-   // } else {
-   //     res.status(401).json({message: "Login failed"});
- //   }
-    
+        else{
+            req.session.user = user.username;
+            console.log(req.session.user);
+            console.log(user);
+            console.log(user.firstname);
+            console.log(user.lastname);
 
-    // if(theUser.password === reqPassword){
-    //     res.status(201).json({message: "Login successful"});
-    // } else {
-    //     res.status(401).json({message: "Login failed"});
-    // }
+            console.log("session signup");
+            return res.status(201).send({username:"test"});
+            //   res.redirect('/');
+        }
+    })(req, res);
 
 });
 

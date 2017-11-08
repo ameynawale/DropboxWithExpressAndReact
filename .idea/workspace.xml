@@ -2,13 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7be4480-2d85-4459-b9e8-e4ce748642b6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/node_modules/fresh/HISTORY.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/node_modules/fresh/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/node_modules/fresh/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/node_modules/fresh/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/node_modules/fresh/package.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/app.js" afterPath="$PROJECT_DIR$/nodelogin/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/.coveralls.yml" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/.coveralls.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/.eslintrc" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/.npmignore" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/.npmignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/.travis.yml" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/CHANGELOG.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/Makefile" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/README.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/component.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/component.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/karma.conf.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/node.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/node.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/browser.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/browser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/debug.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/debug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/node.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/debug/src/node.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/History.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/History.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/Readme.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/Readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/application.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/express.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/express.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/middleware/init.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/middleware/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/middleware/query.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/middleware/query.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/request.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/request.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/response.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/router/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/router/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/router/layer.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/router/layer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/router/route.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/router/route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/utils.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/view.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/lib/view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/express/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/express/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/HISTORY.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/README.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/finalhandler/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/fresh/HISTORY.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/fresh/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/fresh/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/fresh/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/fresh/README.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/fresh/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/fresh/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/fresh/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/fresh/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/fresh/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/send/HISTORY.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/send/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/send/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/send/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/send/README.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/send/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/send/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/send/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/send/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/send/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/HISTORY.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/README.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-favicon/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/HISTORY.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/README.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/index.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/serve-static/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/History.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/History.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/LICENSE" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/Readme.md" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/Readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/as-function.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/as-function.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/cjs/should.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/cjs/should.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/es6/should.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/es6/should.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/package.json" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/should.d.ts" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/should.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/node_modules/should/should.js" afterPath="$PROJECT_DIR$/nodelogin/node_modules/should/should.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/package-lock.json" afterPath="$PROJECT_DIR$/nodelogin/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/package.json" afterPath="$PROJECT_DIR$/nodelogin/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/package-lock.json" afterPath="$PROJECT_DIR$/reactlogin/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/package.json" afterPath="$PROJECT_DIR$/reactlogin/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/src/components/Login.js" afterPath="$PROJECT_DIR$/reactlogin/src/components/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js" afterPath="$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nodelogin/routes/users.js" afterPath="$PROJECT_DIR$/nodelogin/routes/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/src/components/SignUp.js" afterPath="$PROJECT_DIR$/reactlogin/src/components/SignUp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactlogin/src/components/Welcome.js" afterPath="$PROJECT_DIR$/reactlogin/src/components/Welcome.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,103 +94,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nodelogin/routes/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-back-end/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1325">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="passport.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nodelogin/routes/passport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-back-end/services/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-124">
+              <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewerHomePage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Welcome.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2850">
-              <caret line="127" column="16" lean-forward="false" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#147#181#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PageHeader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/PageHeader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/FileContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#550#586#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeftPanel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/LeftPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="275">
+              <caret line="67" column="38" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignUp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/SignUp.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nodelogin/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RightPanel.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/RightPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="1625">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RightPanel.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/stylesheets/RightPanel.css">
+      <file leaf-file-name="asdf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-back-end/public/uploads/q@q.com/asdf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Starred.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Starred.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Welcome.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactlogin/src/stylesheets/Welcome.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
-              <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+            <state relative-caret-position="0">
+              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -128,8 +177,18 @@
       <file leaf-file-name="ImageGridList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4450">
+            <state relative-caret-position="493">
               <caret line="189" column="42" lean-forward="false" selection-start-line="189" selection-start-column="42" selection-end-line="189" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nodelogin/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -151,6 +210,7 @@
       <find>classes</find>
       <find>gridlist</find>
       <find>__</find>
+      <find>email</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,16 +221,12 @@
       <list>
         <option value="$PROJECT_DIR$/reactlogin/src/App.js" />
         <option value="$PROJECT_DIR$/reactlogin/package.json" />
-        <option value="$PROJECT_DIR$/reactlogin/src/components/SignUp.js" />
         <option value="$PROJECT_DIR$/nodelogin/bin/test.js" />
         <option value="$PROJECT_DIR$/nodelogin/Readme.txt" />
         <option value="$PROJECT_DIR$/nodelogin/routes/mysql.js" />
         <option value="$PROJECT_DIR$/nodelogin/bin/www" />
-        <option value="$PROJECT_DIR$/reactlogin/src/api/API.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js" />
         <option value="$PROJECT_DIR$/nodelogin/test.js" />
-        <option value="$PROJECT_DIR$/nodelogin/routes/users.js" />
-        <option value="$PROJECT_DIR$/nodelogin/package.json" />
         <option value="$PROJECT_DIR$/reactlogin/src/stylesheets/LeftPanel.css" />
         <option value="$PROJECT_DIR$/reactlogin/src/stylesheets/LoginPage.css" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/Login.js" />
@@ -179,18 +235,27 @@
         <option value="$PROJECT_DIR$/nodelogin/swagger/index.html" />
         <option value="$PROJECT_DIR$/nodelogin/api/swagger/swagger.yaml" />
         <option value="$PROJECT_DIR$/nodelogin/public/swagger.json" />
-        <option value="$PROJECT_DIR$/nodelogin/app.js" />
         <option value="$PROJECT_DIR$/nodelogin/routes/index.js" />
         <option value="$PROJECT_DIR$/nodelogin/swagger-express/example/swagger.json" />
         <option value="$PROJECT_DIR$/nodelogin/swagger-express/example/app.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/Starred.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/Recent.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/PageHeader.js" />
-        <option value="$PROJECT_DIR$/reactlogin/src/components/Welcome.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/stylesheets/Welcome.css" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/FileContainer.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/LeftPanel.js" />
         <option value="$PROJECT_DIR$/reactlogin/src/components/RightPanel.js" />
+        <option value="$PROJECT_DIR$/reactlogin/src/components/SignUp.js" />
+        <option value="$PROJECT_DIR$/reactlogin/src/api/API.js" />
+        <option value="$PROJECT_DIR$/nodelogin/routes/passport.js" />
+        <option value="$PROJECT_DIR$/kafka-back-end/services/signup.js" />
+        <option value="$PROJECT_DIR$/kafka-back-end/services/login.js" />
+        <option value="$PROJECT_DIR$/kafka-back-end/public/uploads/q@q.com/test.txt" />
+        <option value="$PROJECT_DIR$/reactlogin/src/components/Welcome.js" />
+        <option value="$PROJECT_DIR$/nodelogin/routes/users.js" />
+        <option value="$PROJECT_DIR$/nodelogin/package.json" />
+        <option value="$PROJECT_DIR$/nodelogin/app.js" />
+        <option value="$PROJECT_DIR$/kafka-back-end/public/uploads/q@q.com/asdf" />
       </list>
     </option>
   </component>
@@ -201,14 +266,15 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/kafka-back-end/node_modules" />
     <handled-path value="$PROJECT_DIR$/nodelogin/node_modules" />
     <handled-path value="$PROJECT_DIR$/nodelogin/swagger-express/node_modules" />
     <handled-path value="$PROJECT_DIR$/reactlogin/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1042" />
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -225,7 +291,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -268,65 +333,13 @@
               <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
               <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
               <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="api.coffee" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="nodelogin" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger-express" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
               <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
               <item name="reactlogin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="reactlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
@@ -348,22 +361,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DropboxWithExpressAndReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DropboxWithExpressAndReact" type="462c0819:PsiDirectoryNode" />
-              <item name="reactlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kafka" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/nodelogin/node_modules/mocha" />
@@ -440,23 +447,26 @@
       <workItem from="1509562567831" duration="44000" />
       <workItem from="1509590234891" duration="57771000" />
       <workItem from="1509919350901" duration="12756000" />
-      <workItem from="1509986679271" duration="937000" />
+      <workItem from="1509986679271" duration="10376000" />
+      <workItem from="1510023710613" duration="4869000" />
+      <workItem from="1510092275494" duration="13215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272799000" />
+    <option name="totallyTimeSpent" value="300322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1054" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27135417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26809955" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34728506" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -464,7 +474,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -479,104 +489,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nodelogin/node_modules/express/lib/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15431">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/node_modules/express/lib/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6781">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/node_modules/express/lib/middleware/query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/node_modules/express/lib/express.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1452">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/routes/mysql.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="245" column="43" lean-forward="false" selection-start-line="245" selection-start-column="41" selection-end-line="245" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactlogin/src/components/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1132">
@@ -588,20 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1525">
           <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="51" column="42" lean-forward="false" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/api/API.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -648,13 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10200">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nodelogin/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -749,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="79" column="36" lean-forward="true" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Recent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -763,32 +647,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4450">
-          <caret line="189" column="42" lean-forward="false" selection-start-line="189" selection-start-column="42" selection-end-line="189" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactlogin/src/components/PageHeader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2850">
-          <caret line="127" column="16" lean-forward="false" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#147#181#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,9 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
           <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,28 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/SignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/FileContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#550#586#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,8 +685,188 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reactlogin/src/components/RightPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="475">
+          <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/FileContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+            <element signature="e#550#586#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/SignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/routes/kafka/kafkarpc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/routes/kafka/Connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/routes/kafka/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/kafka/Connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/services/mongo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/routes/mongo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/services/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="51" column="42" lean-forward="false" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/public/uploads/q@q.com/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/api/API.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1000">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/Welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="67" column="38" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/NewerHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1325">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/services/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/routes/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-back-end/public/uploads/q@q.com/asdf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactlogin/src/components/ImageGridList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="189" column="42" lean-forward="false" selection-start-line="189" selection-start-column="42" selection-end-line="189" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1625">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodelogin/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding />
         </state>
       </provider>

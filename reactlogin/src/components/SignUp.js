@@ -10,7 +10,7 @@ class SignUp extends Component {
     state = {
         firstname: '',
         lastname: '',
-        email: '',
+        username: '',
         password: ''
         
               
@@ -20,7 +20,7 @@ class SignUp extends Component {
         this.setState({
         	firstname: '',
             lastname: '',
-            email: '',
+            username: '',
             password: ''
             
         });
@@ -69,10 +69,10 @@ class SignUp extends Component {
                             type="email"
                                       label="email"
                             placeholder="Email ID"
-                            value={this.state.email}
+                            value={this.state.username}
                             onChange={(event) => {
                                 this.setState({
-                                    email: event.target.value
+                                    username: event.target.value
                                 });
                             }}
                         />

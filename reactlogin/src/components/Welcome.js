@@ -65,7 +65,7 @@ class Welcome extends Component {
             .then((data) => {
                 //console.log(data);
                 this.setState({
-                    images: data
+                    images: data.files
                 });
             });
     };
