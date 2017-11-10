@@ -99,8 +99,23 @@ class RightPanel extends React.Component{
 
     handleCreateFolder = (userdata) => {
         API.createFolder(userdata)
-            .then()
-    }
+            .then((status) => {
+                if (status === 201) {
+                    this.setState({
+                        modalIsOpen: true,
+                        message: "Create folder successful!!",
+                        username: userdata.username,
+                        activeItemName: userdata.activeItemName
+                    });
+                    //this.props.history.push("/welcome");
+                } else if (status === 401) {
+                    this.setState({
+                        isLoggedIn: false,
+                        message: "Could not create folder!"
+                    });
+                }
+            });
+    };
 
     openModal(item) {
         this.setState({

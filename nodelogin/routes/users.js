@@ -182,8 +182,8 @@ router.post('/doSignup', function (req, res, next) {
 
 });
 
-router.post('/editprofile', function (req, res, next) {
-    kafka.make_request('profile_topic',{"username":req.body.username,"password":req.body.password, "firstname": req.body.firstname, "lastname": req.body.lastname}, function(err,results){
+router.post('/createFolder', function (req, res, next) {
+    kafka.make_request('folder_topic',{"username":req.body.username,"folder":req.body.folder}, function(err,results){
         console.log('in result');
         console.log(results);
         if(err){
@@ -191,13 +191,35 @@ router.post('/editprofile', function (req, res, next) {
         }
         else
         {
-            if(results.code == 200){
-
-                done(null,true,{username: req.body.username, password: req.body.password, firstname: req.body.firstname, lastname:req.body.lastname/*"bhavan@b.com",password:"a"*/});
-            }
-            else {
+            //if(results.code == 200){
+            res.status(201).send();
+            //done(null,true,{username: req.body.username, password: req.body.password, firstname: req.body.firstname, lastname:req.body.lastname/*"bhavan@b.com",password:"a"*/});
+            //}
+            /*else {
                 done(null,false);
-            }
+            }*/
+        }
+    });
+
+});
+
+
+router.post('/editprofile', function (req, res, next) {
+    kafka.make_request('profile_topic',{"username":req.body.username,"password":req.body.password, "firstname": req.body.firstname, "lastname": req.body.lastname, "contact": req.body.contact, "education": req.body.education, "interests": req.body.interests}, function(err,results){
+        console.log('in result');
+        console.log(results);
+        if(err){
+            done(err,{});
+        }
+        else
+        {
+            //if(results.code == 200){
+                res.status(201).send();
+                //done(null,true,{username: req.body.username, password: req.body.password, firstname: req.body.firstname, lastname:req.body.lastname/*"bhavan@b.com",password:"a"*/});
+            //}
+            /*else {
+                done(null,false);
+            }*/
         }
     });
 });

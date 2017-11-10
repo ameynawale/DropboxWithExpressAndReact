@@ -4,6 +4,7 @@ var list = require('./services/listdir');
 var signup = require('./services/signup');
 var upload = require('./services/upload');
 var share = require('./services/share');
+var createfolder = require('./services/createfolder');
 var editprofile = require('./services/editprofile');
 
 //var topic_name = 'login_topic';
@@ -14,6 +15,7 @@ var consumer2 = connection.getConsumer('signup_topic');
 var consumer3 = connection.getConsumer('upload_topic');
 var consumer4 = connection.getConsumer('share_topic');
 var consumer5 = connection.getConsumer('profile_topic');
+var consumer6 = connection.getConsumer('folder_topic');
 var producer = connection.getProducer();
 
 console.log('server is running');
@@ -149,3 +151,26 @@ consumer5.on('message', function (message) {
         return;
     });
 });
+
+consumer6.on('message', function (message) {
+    console.log('message received');
+    console.log(JSON.stringify(message.value));
+    var data = JSON.parse(message.value);
+    createfolder.handle_request(data.data, function(err,res){
+        console.log('after handle'+res);
+        var payloads = [
+            { topic: data.replyTo,
+                messages:JSON.stringify({
+                    correlationId:data.correlationId,
+                    data : res
+                }),
+                partition : 0
+            }
+        ];
+        producer.send(payloads, function(err, data){
+            console.log(data);
+        });
+        return;
+    });
+});
+

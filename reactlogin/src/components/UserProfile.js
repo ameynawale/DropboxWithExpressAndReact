@@ -42,9 +42,25 @@ class UserProfile extends React.Component{
                 <div>
                     <div className="mainContainer account-div">
                         <div className="row justify-content-md-center">
-                            <div className="col-md-3">
+                            <div className="col-md-6">
 
                                 <form>
+                                    <div className="form-group profile-field">
+                                        <label>Email: </label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            label="email"
+                                            placeholder="Email"
+                                            value={this.state.username}
+                                            onChange={(event) => {
+                                                this.setState({
+                                                    username: event.target.value
+                                                });
+                                            }}
+                                            required
+                                        />
+                                    </div>
                                     <div className="form-group profile-field">
                                         <label>First Name: </label>
                                         <input
@@ -60,7 +76,8 @@ class UserProfile extends React.Component{
                                             }}
                                         />
                                     </div>
-                                    <div className="form-group">
+                                    <div className="form-group profile-field">
+                                        <label>Last Name: </label>
                                         <input
                                             className="form-control"
                                             type="text"
@@ -74,22 +91,8 @@ class UserProfile extends React.Component{
                                             }}
                                         />
                                     </div>
-                                    <div className="form-group">
-                                        <input
-                                            className="form-control"
-                                            type="email"
-                                            label="email"
-                                            placeholder="Email ID"
-                                            value={this.state.username}
-                                            onChange={(event) => {
-                                                this.setState({
-                                                    username: event.target.value
-                                                });
-                                            }}
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
+                                    <div className="form-group profile-field">
+                                        <label>Password: </label>
                                         <input
                                             className="form-control"
                                             type="password"
@@ -99,6 +102,51 @@ class UserProfile extends React.Component{
                                             onChange={(event) => {
                                                 this.setState({
                                                     password: event.target.value
+                                                });
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="form-group profile-field">
+                                        <label>Contact: </label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            label="contact"
+                                            placeholder="Enter Contact"
+                                            value={this.state.contact}
+                                            onChange={(event) => {
+                                                this.setState({
+                                                    contact: event.target.value
+                                                });
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="form-group profile-field">
+                                        <label>Education: </label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            label="education"
+                                            placeholder="Enter Education"
+                                            value={this.state.education}
+                                            onChange={(event) => {
+                                                this.setState({
+                                                    education: event.target.value
+                                                });
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="form-group profile-field">
+                                        <label>Interests: </label>
+                                        <input
+                                            className="form-control"
+                                            type="text"
+                                            label="interests"
+                                            placeholder="Enter your interests"
+                                            value={this.state.interests}
+                                            onChange={(event) => {
+                                                this.setState({
+                                                    interests: event.target.value
                                                 });
                                             }}
                                         />

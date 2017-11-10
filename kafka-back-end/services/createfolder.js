@@ -16,30 +16,30 @@ function handle_request(msg, callback){
             if (err) {
                 res.value = err;
                 res.code = '500';
-
-
             }
-            if (user)
-            {
-                coll.updateOne(
-                    {username: msg.username},
-                    {
-                        $set: {password: msg.password, firstname: msg.firstname, lastname: msg.lastname, contact: msg.contact, education: msg.education, interests: msg.interests}
+            else {
+                var Ufolder = '../public/uploads/'+msg.username;
+                const dir = path.join(__dirname,Ufolder,msg.folder);
+                const mkdirSync = function (dirPath) {
+                    try {
+                        fs.mkdirSync(dirPath)
+                    } catch (err) {
+                        if (err.code !== 'EEXIST') throw err
                     }
-                );
-
+                }
+                    mkdirSync(dir);
+                    console.log("mkdir done");
+                }});
                 res.value =  msg;
                 res.code = 200;
 
-            }
             console.log("inside try:" + res);
-            callback(null, res);
-        });
+            callback(null, res)}
+        );
         //  done (null, {username:username, password:password, firstname:req.body.firstname, lastname: req.body.lastname});
 
 
-    });
-}
+    };
 
 
 

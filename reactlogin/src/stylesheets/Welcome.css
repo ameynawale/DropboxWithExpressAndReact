@@ -98,5 +98,9 @@
 }
 
 .profile-field{
-    flex: auto;
+    display: flex;
+}
+
+.label-field{
+    display: inline;
 }
