@@ -8,6 +8,7 @@ import SignUp from "./SignUp";
 import LeftPanel from "./LeftPanel";
 import FileContainer from "./FileContainer";
 import PageHeader from "./PageHeader";
+import UserProfile from "./UserProfile";
 
 class NewerHomePage extends Component {
 
@@ -80,6 +81,12 @@ class NewerHomePage extends Component {
                         <LeftPanel/>
                         <Welcome username={this.state.username} route={this.props.history.push}/>
 
+                    </div>
+                )}/>
+                <Route exact path="/userprofile" render={() => (
+                    <div>
+                        <LeftPanel/>
+                        <UserProfile/>
                     </div>
                 )}/>
             </div>

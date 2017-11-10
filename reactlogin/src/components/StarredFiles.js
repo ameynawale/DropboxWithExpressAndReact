@@ -64,7 +64,7 @@ const customStyles = {
     }
 };
 
-class FileContainer extends Component {
+class StarredFiles extends Component {
 
     constructor() {
         super();
@@ -216,8 +216,8 @@ class FileContainer extends Component {
 
 
                                 <a href= {'http://localhost:3001/files/download/'+this.props.username+'/'+tile} download style={{color:'#3d464d'}}>{tile} </a>
-                                <button className="share-button" onClick={() => this.openModal(tile)}  style={{float:'right'}}>Share</button>
-                                <button className="share-button" onClick={() => this.openModal(tile)}  style={{float:'right'}}>Star</button>
+                                <button className="share-button" onClick={() => this.openModal(tile)} style={{float:'right'}}>Share</button>
+                                <button className="share-button" onClick={() => this.openModal(tile)} style={{float:'right'}}>Remove Star</button>
 
 
 
@@ -242,4 +242,4 @@ class FileContainer extends Component {
 }
 
 
-export default withRouter(FileContainer);
+export default withRouter(StarredFiles);

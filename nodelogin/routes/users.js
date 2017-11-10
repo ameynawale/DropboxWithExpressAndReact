@@ -83,6 +83,11 @@ router.get('/', function (req, res, next) {
 
 });
 
+router.get('/serviceclient',function (req, res) {
+    console.log('inside serviceclient');
+    res.sendFile('../public/swagger.yaml');
+})
+
 router.post('/files', function (req, res, next) {
     kafka.make_request('list_topic',req.body.username, function(err,results){
         console.log('in result');
@@ -177,6 +182,110 @@ router.post('/doSignup', function (req, res, next) {
 
 });
 
+router.post('/editprofile', function (req, res, next) {
+    kafka.make_request('profile_topic',{"username":req.body.username,"password":req.body.password, "firstname": req.body.firstname, "lastname": req.body.lastname}, function(err,results){
+        console.log('in result');
+        console.log(results);
+        if(err){
+            done(err,{});
+        }
+        else
+        {
+            if(results.code == 200){
+
+                done(null,true,{username: req.body.username, password: req.body.password, firstname: req.body.firstname, lastname:req.body.lastname/*"bhavan@b.com",password:"a"*/});
+            }
+            else {
+                done(null,false);
+            }
+        }
+    });
+});
+
+
+router.post('/upload', upload.any(), function (req, res, next) {
+    console.log(req.body);
+    console.log(req.file);
+    var Ufolder = '../public/uploads/*';
+    const dir = path.join(__dirname,Ufolder);
+    console.log(dir);
+
+    // Ufolder = path.join()
+
+    glob(dir, function (er, files) {
+        console.log("inside glob");
+        console.log(files);
+        var resArr = files.map(function (file) {
+            var imgJSON = {};
+            imgJSON = file.split('/')[6];
+            imgJSON.cols = 2  ;
+            console.log(resArr);
+            return imgJSON;
+            console.log(resArr);
+        });
+
+        // console.log('recent files':resArr[0]);
+        for (i=0; i< resArr.length; i++)
+        {
+            console.log("in for")
+            if(resArr[i].search(".com") === -1){
+
+                console.log("in if");
+                console.log(resArr[i]);
+
+                var homefolder = path.join(__dirname,'..','public','uploads', resArr[i]);
+                kafka.make_request('upload_topic',{username: req.body.username, path: homefolder, file: resArr[i]}, function(err,results){
+                    console.log('in result');
+                    console.log(results);
+                    if(err){
+                        res.status(500).send();
+                    }
+                    else
+                    {
+                        if(results.code == 200){
+                            //  done(null,true,results/{username: username, password: password}/);
+                            console.log(results.value);
+                            var arr = results.value;
+                            res.status(201).json({username: arr});
+                        }
+                    }
+                });
+
+                break;
+            }
+        }
+
+    });
+});
+
+router.post('/doShare', function (req, res, next) {
+
+    var username = req.body.username;
+    var shareuser = req.body.emails;
+    var usernames = shareuser.split(',');
+    var sharetouser ;
+
+    kafka.make_request('share_topic',{username: req.body.username, item: req.body.activeItemName, shareuser: req.body.emails}, function(err,results){
+
+        console.log('in result');
+        console.log(results);
+        if(err){
+            res.status(500).send();
+        }
+        else
+        {
+            if(results.code == 200){
+                //  done(null,true,results/{username: username, password: password}/);
+                console.log(results.value);
+
+                res.status(201).json({message: "Sharing successful"});
+            }
+        }
+    });
+});
+/*
+
+
 router.post('/doShare', function (req, res, next) {
 
     var emails = req.body.emails;
@@ -212,12 +321,14 @@ router.post('/doShare', function (req, res, next) {
         });
 
 });
+*/
 
 
+/*
 router.post('/upload', upload.any(), function (req, res, next) {
     var email = req.body.email;
     //console.log('this is the file name'+req.file);
-    var pathtoFiles ="public/uploads/*";
+    var pathtoFiles ="public/uploads/!*";
     var resArr;
     glob(pathtoFiles, function (er, files) {
 
@@ -248,11 +359,12 @@ router.post('/upload', upload.any(), function (req, res, next) {
         };
     }});
 
-        /*var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + resArr[0];
-        var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.email + '/' + resArr[0];*/
+        /!*var sourcePath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + resArr[0];
+        var destPath = 'C:/My Projects/DropboxWithExpressAndReact/nodelogin/public/uploads/' + req.body.email + '/' + resArr[0];*!/
 
 
     res.status(204).json({email: email});
 });
+*/
 
 module.exports = router;

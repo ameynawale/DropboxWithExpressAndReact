@@ -14,6 +14,7 @@ import RightPanel from './RightPanel';
 import Starred from './Starred';
 import Recent from './Recent';
 import '../stylesheets/Welcome.css';
+import StarredFiles from './StarredFiles';
 
 
 const styles = ({
@@ -37,30 +38,31 @@ class Welcome extends Component {
 	        payload.append('mypic', event.target.files[0]);
 	        payload.append('email',this.state.username);
 
-	        API.uploadFile(payload)
-	            .then((res) => {
-	                if (res.status === 204) {
-                        API.GetFiles(res.email)
-                            .then((data) => {
-                                //console.log(data);
-                                this.setState({
-                                    images: data
-                                });
-                            });
-	                    //window.location.reload();
-                        //this.getUserFiles(res.email);
-	                    /*API.getImages()
-	                        .then((data) => {
-	                            this.setState({
-	                                images: data
-	                            });
-	                        });*/
-	                }
-	            });
+         API.uploadFile(payload)
+             .then((data) => {
+                 //   if (status === 201) {
+                 API.GetFiles(data)
+                     .then((res) => this.setState({
+                         images: res.files
+                     }))
+         });
 
-	    };
+     };
 
-    getUserFiles = (userdata) => {
+    handleFileUser = (userdata) => {
+        API.GetFiles(userdata)
+        // .then((status) => {
+        //    if (status === 201) {
+        // 	API.getFiles()
+            .then((data1) => {
+                this.setState({
+                    images: data1.files
+                });
+            })
+    };
+
+
+    /*getUserFiles = (userdata) => {
         API.GetFiles(userdata)
             .then((data) => {
                 //console.log(data);
@@ -68,7 +70,7 @@ class Welcome extends Component {
                     images: data.files
                 });
             });
-    };
+    };*/
 
     static propTypes = {
         username: PropTypes.string.isRequired
@@ -87,14 +89,15 @@ class Welcome extends Component {
             folderpath : ''
         };
 
-        this.getUserFiles = this.getUserFiles.bind(this);
+        this.handleFileUser = this.handleFileUser.bind(this);
     }
 
    componentWillMount(){
         this.setState({
             username : this.props.username,
             //getUserFiles: this.getUserFiles
-        }); 
+        });
+       this.handleFileUser(this.props);
         //document.title = `Welcome, ${this.state.username} !!`;
        //this.getUserFiles(this.state);
     }
@@ -102,7 +105,7 @@ class Welcome extends Component {
     componentDidMount(){
     	
         document.title = `Welcome, ${this.state.username} !!`;
-        this.getUserFiles(this.state);
+       // this.getUserFiles(this.state);
         /*API.getImages()
         .then((data) => {
             console.log(data);
@@ -125,11 +128,14 @@ class Welcome extends Component {
         return(
             <div>
                 <PageHeader/>
+
                 <Starred/>
+                <StarredFiles items={this.state.images} route={this.props.route} username={this.state.username}/>
                 <Recent/>
                 <FileContainer items={this.state.images} route={this.props.route} username={this.state.username}/>
 
-                <RightPanel/>
+                <RightPanel username ={this.state.username}/>
+
 
             </div>
         )

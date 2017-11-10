@@ -2,12 +2,18 @@ var connection =  new require('./kafka/Connection');
 var login = require('./services/login');
 var list = require('./services/listdir');
 var signup = require('./services/signup');
+var upload = require('./services/upload');
+var share = require('./services/share');
+var editprofile = require('./services/editprofile');
 
 //var topic_name = 'login_topic';
 //var consumer = connection.getConsumer(topic_name);
 var consumer = connection.getConsumer('login_topic');
 var consumer1 = connection.getConsumer('list_topic');
 var consumer2 = connection.getConsumer('signup_topic');
+var consumer3 = connection.getConsumer('upload_topic');
+var consumer4 = connection.getConsumer('share_topic');
+var consumer5 = connection.getConsumer('profile_topic');
 var producer = connection.getProducer();
 
 console.log('server is running');
@@ -61,6 +67,72 @@ consumer2.on('message', function (message) {
     console.log(JSON.stringify(message.value));
     var data = JSON.parse(message.value);
     signup.handle_request(data.data, function(err,res){
+        console.log('after handle'+res);
+        var payloads = [
+            { topic: data.replyTo,
+                messages:JSON.stringify({
+                    correlationId:data.correlationId,
+                    data : res
+                }),
+                partition : 0
+            }
+        ];
+        producer.send(payloads, function(err, data){
+            console.log(data);
+        });
+        return;
+    });
+});
+
+consumer3.on('message', function (message) {
+    console.log('message received');
+    console.log(JSON.stringify(message.value));
+    var data = JSON.parse(message.value);
+    upload.handle_request(data.data, function(err,res){
+        console.log('after handle'+res);
+        var payloads = [
+            { topic: data.replyTo,
+                messages:JSON.stringify({
+                    correlationId:data.correlationId,
+                    data : res
+                }),
+                partition : 0
+            }
+        ];
+        producer.send(payloads, function(err, data){
+            console.log(data);
+        });
+        return;
+    });
+});
+
+consumer4.on('message', function (message) {
+    console.log('message received');
+    console.log(JSON.stringify(message.value));
+    var data = JSON.parse(message.value);
+    share.handle_request(data.data, function(err,res){
+        console.log('after handle'+res);
+        var payloads = [
+            { topic: data.replyTo,
+                messages:JSON.stringify({
+                    correlationId:data.correlationId,
+                    data : res
+                }),
+                partition : 0
+            }
+        ];
+        producer.send(payloads, function(err, data){
+            console.log(data);
+        });
+        return;
+    });
+});
+
+consumer5.on('message', function (message) {
+    console.log('message received');
+    console.log(JSON.stringify(message.value));
+    var data = JSON.parse(message.value);
+    editprofile.handle_request(data.data, function(err,res){
         console.log('after handle'+res);
         var payloads = [
             { topic: data.replyTo,

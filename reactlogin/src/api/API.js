@@ -35,6 +35,23 @@ export const doSignup = (payload) =>
             return error;
         });
 
+export const editProfile = (payload) =>
+    fetch(`${api}/users/editprofile`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
 export const doShare = (payload) =>
     fetch(`${api}/users/doShare`, {
         method: 'POST',
@@ -52,6 +69,26 @@ export const doShare = (payload) =>
             console.log("This is error");
             return error;
         });
+
+export const createFolder = (payload) =>
+    fetch(`${api}/users/createFolder`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        //credentials: 'include',
+        //mode: 'cors',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
+
 
  export const getImages = () =>
     fetch(`${api}/files/`)
