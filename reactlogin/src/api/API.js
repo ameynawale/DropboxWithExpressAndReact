@@ -70,6 +70,24 @@ export const doShare = (payload) =>
             return error;
         });
 
+export const createGroup = (payload) =>
+    fetch(`${api}/users/createGroup`, {
+        method: 'POST',
+        headers: {
+            ...headers,
+            'Content-Type': 'application/json'
+        },
+        //credentials: 'include',
+        //mode: 'cors',
+        body: JSON.stringify(payload)
+    }).then(res => {
+        return res.status;
+    })
+        .catch(error => {
+            console.log("This is error");
+            return error;
+        });
+
 export const createFolder = (payload) =>
     fetch(`${api}/users/createFolder`, {
         method: 'POST',

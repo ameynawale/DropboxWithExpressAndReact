@@ -305,6 +305,32 @@ router.post('/doShare', function (req, res, next) {
         }
     });
 });
+
+router.post('/createGroup', function (req, res, next) {
+
+    var username = req.body.username;
+    var shareuser = req.body.emails;
+    var usernames = shareuser.split(',');
+    //var sharetouser ;
+
+    kafka.make_request('group_topic',{username: req.body.username, shareuser: req.body.emails, groupname: req.body.groupname}, function(err,results){
+
+        console.log('in result');
+        console.log(results);
+        if(err){
+            res.status(500).send();
+        }
+        else
+        {
+            if(results.code == 200){
+                //  done(null,true,results/{username: username, password: password}/);
+                console.log(results.value);
+
+                res.status(201).json({message: "Sharing successful"});
+            }
+        }
+    });
+});
 /*
 
 

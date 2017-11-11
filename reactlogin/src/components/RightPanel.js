@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import '../stylesheets/RightPanel.css';
 import TextField from 'material-ui/TextField';
 import Modal from 'react-modal';
+import Modal1 from 'react-modal';
 import {withStyles} from 'material-ui/styles';
 import * as API from '../api/API';
 import PropTypes from 'prop-types';
@@ -67,15 +68,19 @@ class RightPanel extends React.Component{
 
         this.state = {
             modalIsOpen: false,
+            modal1IsOpen: false,
             activeItemName: '',
             activeItemId: null,
             emails: '',
-            folder: ''
+            folder: '',
+            groupname: ''
         };
 
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.openModal1 = this.openModal1.bind(this);
+        this.closeModal1 = this.closeModal1.bind(this);
         //this.handleShare = this.handleShare.bind(this);
     }
 
@@ -95,6 +100,26 @@ class RightPanel extends React.Component{
                     }))
             });
 
+    };
+
+    handleCreateGroup = (userdata) => {
+        API.createGroup(userdata)
+            .then((status) => {
+                if (status === 201) {
+                    this.setState({
+                        modalIsOpen: true,
+                        message: "Share successful!!",
+                        username: userdata.username,
+                        activeItemName: userdata.activeItemName
+                    });
+                    //this.props.history.push("/welcome");
+                } else if (status === 401) {
+                    this.setState({
+                        isLoggedIn: false,
+                        message: "Enter valid information. Try again..!!"
+                    });
+                }
+            });
     };
 
     handleCreateFolder = (userdata) => {
@@ -126,6 +151,15 @@ class RightPanel extends React.Component{
             username: this.props.username
         });
     }
+    openModal1(item) {
+        this.setState({
+            modal1IsOpen: true,
+            activeItemName: item,
+            activeItemId: item.id,
+            emails: '',
+            username: this.props.username
+        });
+    }
 
     afterOpenModal() {
         // references are now sync'd and can be accessed.
@@ -134,6 +168,9 @@ class RightPanel extends React.Component{
 
     closeModal() {
         this.setState({modalIsOpen: false});
+    }
+    closeModal1() {
+        this.setState({modal1IsOpen: false});
     }
 
     render(){
@@ -188,12 +225,66 @@ class RightPanel extends React.Component{
                         </button>
                     </form>
                 </Modal>
+                <Modal1
+                    isOpen={this.state.modal1IsOpen}
+                    onRequestClose={this.closeModal1}
+                    style={customStyles}
+                    //contentLabel="Example Modal"
+                    itemId={this.state.activeItemId}
+                    itemName={this.state.activeItemName}
+                    overlayClassName="mainContainerRoot mainContainer"
+                >
+
+                    <h6 ref={subtitle => this.subtitle = subtitle}>{this.state.activeItemName}</h6>
+                    <h6 ref={subtitle => this.subtitle = subtitle}>{this.state.username}</h6>
+                    <button onClick={this.closeModal1}>close</button>
+                    <form>
+                        <input
+                            className="form-control"
+                            type="text"
+                            label="text"
+                            placeholder="Group name"
+                            value={this.state.groupname}
+                            onChange={(event) => {
+                                this.setState({
+                                    groupname: event.target.value
+                                });
+                            }}
+                        />
+                        <input
+                            className="form-control"
+                            type="text"
+                            label="email"
+                            placeholder="Enter comma separated emails"
+                            value={this.state.emails}
+                            onChange={(event) => {
+                                this.setState({
+                                    emails: event.target.value
+                                });
+                            }}
+                        />
+                        <button
+                            className="btn btn-primary"
+                            type="button"
+                            onClick={() => this.handleCreateGroup(this.state)}>
+                            Create
+                        </button>
+
+                    </form>
+                </Modal1>
+
                 <TextField
                     className={'fileupload'}
                     type="file"
                     name="mypic"
                     onChange={this.handleFileUpload}
                 />
+                <button
+                    className="upload-button"
+                    onClick={() => this.openModal1('test')}
+                >
+                    Create Group
+                </button>
             </div>
         )
     }
