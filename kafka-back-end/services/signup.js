@@ -3,6 +3,8 @@ var mongoURL = "mongodb://localhost:27017/dropbox";
 const fs = require('fs');
 const fse = require('fs-extra');
 var path = require('path');
+var bcrypt = require('bcrypt');
+var crypto = require('crypto');
 
 function handle_request(msg, callback){
 
@@ -35,6 +37,10 @@ function handle_request(msg, callback){
                         if (err.code !== 'EEXIST') throw err
                     }
                 }
+                key = "273_secret"
+                var hash = crypto.createHmac('sha512', key); //encrytion using SHA512
+                hash.update(msg.password);
+                msg.password = hash.digest('hex');
                 var myobj = {
                     username: msg.username,
                     password: msg.password,

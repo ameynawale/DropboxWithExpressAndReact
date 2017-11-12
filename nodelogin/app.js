@@ -39,7 +39,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cors({ credentials: true }));
+//app.use(cors({ credentials: true }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 

@@ -80,6 +80,7 @@ class StarredFiles extends Component {
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.handleShare = this.handleShare.bind(this);
+        this.handleDelStar = this.handleDelStar.bind(this);
     }
 
     openModal(item) {
@@ -110,6 +111,26 @@ class StarredFiles extends Component {
                         message: "Share successful!!",
                         username: userdata.username,
                         activeItemName: userdata.activeItemName
+                    });
+                    //this.props.history.push("/welcome");
+                } else if (status === 401) {
+                    this.setState({
+                        isLoggedIn: false,
+                        message: "Enter valid information. Try again..!!"
+                    });
+                }
+            });
+    };
+
+    handleDelStar = (file) => {
+        API.doDelStar({username: this.props.username, item: file})
+            .then((status) => {
+                if (status === 201) {
+                    this.setState({
+                        //  modalIsOpen: true,
+                        images_star: "delete successful!!",
+                        //  username: userdata.username,
+                        //  activeItemName: userdata.activeItemName
                     });
                     //this.props.history.push("/welcome");
                 } else if (status === 401) {
@@ -217,7 +238,7 @@ class StarredFiles extends Component {
 
                                 <a href= {'http://localhost:3001/files/download/'+this.props.username+'/'+tile} download style={{color:'#3d464d'}}>{tile} </a>
                                 <button className="share-button" onClick={() => this.openModal(tile)} style={{float:'right'}}>Share</button>
-                                <button className="share-button" onClick={() => this.openModal(tile)} style={{float:'right'}}>Remove Star</button>
+                                <button className="share-button" onClick={() => this.handleDelStar(tile)} style={{float:'right'}}>Remove Star</button>
 
 
 

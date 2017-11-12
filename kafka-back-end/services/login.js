@@ -1,5 +1,7 @@
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/dropbox";
+var bcrypt = require('bcrypt');
+var crypto = require('crypto');
 
 function handle_request(msg, callback){
 
@@ -8,6 +10,11 @@ function handle_request(msg, callback){
     mongo.connect(mongoURL, function () {
         console.log('Connected to mongo at: ' + mongoURL);
         var coll = mongo.collection('users');
+
+        key = "273_secret"
+        var hash = crypto.createHmac('sha512', key); //encrytion using SHA512
+        hash.update(msg.password);
+        msg.password = hash.digest('hex');
 
         coll.findOne({username: msg.username, password: msg.password}, function (err, user) {
             if (user) {

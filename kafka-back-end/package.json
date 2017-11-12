@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "connect-mongo": "^2.0.0",
+    "crypto": "^1.0.1",
     "express": "^4.16.2",
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",

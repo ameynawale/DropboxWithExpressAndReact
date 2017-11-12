@@ -415,4 +415,110 @@ router.post('/upload', upload.any(), function (req, res, next) {
 });
 */
 
+router.post('/doStar', function (req, res, next) {
+
+    var username = req.body.username;
+    var item = req.body.item;
+    console.log(req.body);
+    console.log(username);
+    console.log(item);
+
+    var sharetouser ;
+
+
+
+    kafka.make_request('star_topic',{username: req.body.username, item: req.body.item }, function(err,results){
+
+        console.log('in result');
+        console.log(results);
+        if(err){
+            res.status(500).send();
+        }
+        else
+        {
+            if(results.code == 200){
+                //  done(null,true,results/{username: username, password: password}/);
+                console.log(results.value);
+
+
+                res.status(201).json({message: "Staring successful"});
+            }
+        }
+    });
+});
+
+router.post('/doGetStar', function (req, res, next) {
+
+    var username = req.body.username;
+    var item = req.body.item;
+    console.log(req.body);
+    console.log(username);
+    console.log(item);
+
+    var sharetouser ;
+
+
+
+    kafka.make_request('getstar_topic',{username: req.body.username, item: req.body.item }, function(err,results){
+
+        console.log('in result');
+        console.log(results);
+        if(err){
+            res.status(500).send();
+        }
+        else
+        {
+            if(results.code == 200){
+                //  done(null,true,results/{username: username, password: password}/);
+                console.log(results.value);
+                var resarr = [];
+                var res1 = results.value;
+                //  if(res1.length!== 0)
+                //  {
+                resarr = res1.split('<br>');
+                res1.length = res1.length-1;
+                console.log(resarr);
+
+                res.status(201).json({file: resarr});
+            }
+        }
+    });
+});
+
+
+
+router.post('/doDelStar', function (req, res, next) {
+
+    var username = req.body.username;
+    var item = req.body.item;
+    console.log(req.body);
+    console.log(username);
+    console.log(item);
+
+    kafka.make_request('delstar_topic',{username: req.body.username, item: req.body.item }, function(err,results){
+
+        console.log('in result');
+        console.log(results);
+        if(err){
+            res.status(500).send();
+        }
+        else
+        {
+            if(results.code == 200){
+                //  done(null,true,results/{username: username, password: password}/);
+                console.log(results.value);
+                var resarr = [];
+                var res1 = results.value;
+                //  if(res1.length!== 0)
+                //  {
+                resarr = res1.split('<br>');
+                res1.length = res1.length-1;
+                console.log(resarr);
+
+                res.status(201).json({msg: ""});
+            }
+        }
+    });
+});
+
 module.exports = router;
