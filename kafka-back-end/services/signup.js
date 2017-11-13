@@ -51,6 +51,10 @@ function handle_request(msg, callback){
                     if (err) return err;
                     console.log("1 document inserted");
                     mkdirSync(dir);
+                    var starred = dir+'_star';
+                    mkdirSync(starred);
+                    var groups = dir+'/groups';
+                    mkdirSync(groups);
                     console.log("mkdir done");
                     //  coll.close();
                     /*if(u)

@@ -15,4 +15,4 @@ class PageHeader extends React.Component{
     }
 }
 
-export default withRouter(PageHeader);
+export default PageHeader;

@@ -11,18 +11,41 @@ exports.connect = function(url, callback){
       if (err) { throw new Error('Could not connect: '+err); }
       db = _db;
       connected = true;
+
       console.log(connected +" is connected?");
       callback(db);
+
     });
 };
+
+/*exports.connect = function(url, callback){
+    if(db)
+    {
+        callback(db);
+    }
+    else {
+
+        MongoClient.connect(url, function (err, _db) {
+            if (err) {
+                throw new Error('Could not connect: ' + err);
+            }
+
+            db = _db;
+            connected = true;
+            console.log(connected + " is connected?");
+            callback(db);
+        });
+    }
+};*/
 
 /**
  * Returns the collection on the selected database
  */
 exports.collection = function(name){
     if (!connected) {
-      throw new Error('Must connect to Mongo before calling "collection"');
-    } 
+        throw new Error('Must connect to Mongo before calling "collection"');
+    }
     return db.collection(name);
-  
+
+
 };

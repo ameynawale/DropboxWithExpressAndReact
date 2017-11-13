@@ -241,12 +241,12 @@ class FileContainer extends Component {
 
                             <div className="itemRow">
 
-                                <div class="recents-item__icon folder-icon">
-                                   <span class="file-icon file-icon--sprite file-icon--spectrum">
-                                      <span class="file-icon__img">
-                                         <svg width="40" height="40" viewBox="0 0 40 40" class="mc-icon-template-content">
+                                <div className="recents-item__icon folder-icon">
+                                   <span className="file-icon file-icon--sprite file-icon--spectrum">
+                                      <span className="file-icon__img">
+                                         <svg width="40" height="40" viewBox="0 0 40 40" className="mc-icon-template-content">
                                             <title>content-folder-small</title>
-                                            <g fill="none" fill-rule="evenodd">
+                                            <g fill="none" fillRule="evenodd">
                                                <path d="M18.422 11h15.07c.84 0 1.508.669 1.508 1.493v18.014c0 .818-.675 1.493-1.508 1.493H6.508C5.668 32 5 31.331 5 30.507V9.493C5 8.663 5.671 8 6.5 8h7.805c.564 0 1.229.387 1.502.865l1.015 1.777s.4.358 1.6.358z" fill="#71B9F4"></path>
                                                <path d="M18.422 10h15.07c.84 0 1.508.669 1.508 1.493v18.014c0 .818-.675 1.493-1.508 1.493H6.508C5.668 31 5 30.331 5 29.507V8.493C5 7.663 5.671 7 6.5 7h7.805c.564 0 1.229.387 1.502.865l1.015 1.777s.4.358 1.6.358z" fill="#92CEFF"></path>
                                             </g>
@@ -255,14 +255,13 @@ class FileContainer extends Component {
                                    </span>
                                 </div>
                                 <a href= {'http://localhost:3001/files/download/'+this.props.username+'/'+tile} download style={{color:'#3d464d'}}>{tile} </a>
+                                <button className="star__toggle star__toggle--unstarred new-folder-button" role="button" aria-pressed="false" aria-label="Star" onClick={() => this.handleStar(tile)}>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" class="mc-icon-star">
+                                        <title>Artboard</title>
+                                        <path d="M20.944 23.717L16 20.949l-4.944 2.768 1.104-5.558L8 14.312l5.627-.667L16 8.5l2.373 5.145 5.627.667-4.16 3.847 1.104 5.558zM17.66 17.45l1.799-1.663-2.433-.289L16 13.275l-1.026 2.224-2.433.289 1.799 1.663-.478 2.403L16 18.657l2.138 1.197-.478-2.403z" fill-rule="nonzero" fill="#0070E0"></path>
+                                    </svg>
+                                </button>
                                 <button className="share-button" onClick={() => this.openModal(tile)}  style={{float:'right'}}>Share</button>
-                                <button className="share-button" onClick={() => this.handleStar(tile)}  style={{float:'right'}}>Star</button>
-
-
-
-
-
-
 
                             </div>
 
@@ -281,4 +280,4 @@ class FileContainer extends Component {
 }
 
 
-export default withRouter(FileContainer);
+export default FileContainer;

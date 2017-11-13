@@ -28,6 +28,10 @@ function handle_request(msg, callback) {
     fs.readdir(testFolder, function (err, files) {
         //   console.log(files.length);
         console.log(files);
+        if(err){
+            res.code = 404;
+            res.value = "No Starred files";
+        }
         for (var i = 0; i < files.length; i++) {
             if (i < files.length - 1) {
                 response += files[i] + "<br>";

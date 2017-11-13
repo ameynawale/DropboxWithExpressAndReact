@@ -12,4 +12,4 @@ class Recent extends React.Component{
     }
 }
 
-export default withRouter(Recent);
+export default Recent;

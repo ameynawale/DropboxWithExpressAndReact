@@ -135,26 +135,29 @@ router.post('/files', function (req, res, next) {
 
 
 router.get('/download/:username/:filename', function (req, res, next) {
-	var filepath = "./public/uploads/"+req.param("username")+'/'+req.param("filename");
-	//console.log("test");
+	var filepath = "../../kafka-back-end/public/uploads/"+req.param("username")+'/'+req.param("filename");
+	var file = path.join(__dirname,filepath);
+	console.log(file);
 	//console.log(req.param("filename"));
-     res.download(filepath);
+     res.download(file);
 
 });
 
 router.post('/doLogin', function (req, res) {
     passport.authenticate('login', function(err, user) {
-        if(err) {
+        if (err) {
             res.status(500).send();
         }
 
-        if(!user) {
+        if (!user) {
             res.status(401).send();
         }
-        req.session.user = user.username;
-        console.log(req.session.user);
-        console.log("session initilized");
-        return res.status(201).send({username:"test"});
+        else{
+            req.session.user = user.username;
+            console.log(req.session.user);
+            console.log("session initialized");
+            return res.status(201).send({username: "test"});
+        }
     })(req, res);
 });
 
@@ -187,7 +190,8 @@ router.post('/createFolder', function (req, res, next) {
         console.log('in result');
         console.log(results);
         if(err){
-            done(err,{});
+            res.status(401).send();
+            //done(err,{});
         }
         else
         {
@@ -239,7 +243,7 @@ router.post('/upload', upload.any(), function (req, res, next) {
         console.log(files);
         var resArr = files.map(function (file) {
             var imgJSON = {};
-            imgJSON = file.split('/')[6];
+            imgJSON = file.split('uploads/')[1];
             imgJSON.cols = 2  ;
             console.log(resArr);
             return imgJSON;

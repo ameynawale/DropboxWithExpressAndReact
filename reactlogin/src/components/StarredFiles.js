@@ -238,8 +238,18 @@ class StarredFiles extends Component {
 
                                 <a href= {'http://localhost:3001/files/download/'+this.props.username+'/'+tile} download style={{color:'#3d464d'}}>{tile} </a>
                                 <button className="share-button" onClick={() => this.openModal(tile)} style={{float:'right'}}>Share</button>
-                                <button className="share-button" onClick={() => this.handleDelStar(tile)} style={{float:'right'}}>Remove Star</button>
-
+                                <button
+                                    className="star__toggle star__toggle--starred new-folder-button"
+                                    role="button"
+                                    aria-pressed="true"
+                                    aria-label="Star"
+                                    onClick={() => this.handleDelStar(tile)}
+                                >
+                                    <svg width="32" height="32" viewBox="0 0 32 32" className="mc-icon-star mc-icon-star-selected">
+                                        <title>Artboard</title>
+                                        <path d="M16 20.95l-4.944 2.767 1.104-5.558L8 14.312l5.627-.667L16 8.5l2.373 5.145 5.627.667-4.16 3.847 1.104 5.558z" fillRule="nonzero" fill="#0070E0"></path>
+                                    </svg>
+                                </button>
 
 
 
@@ -263,4 +273,4 @@ class StarredFiles extends Component {
 }
 
 
-export default withRouter(StarredFiles);
+export default StarredFiles;

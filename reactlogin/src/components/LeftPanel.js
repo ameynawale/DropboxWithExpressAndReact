@@ -28,4 +28,4 @@ class LeftPanel extends React.Component{
     }
 }
 
-export default withRouter(LeftPanel);
+export default LeftPanel;

@@ -24,7 +24,7 @@ function handle_request(msg, callback){
                 console.log(user);
                 console.log(res.value);
 
-            } else {
+            } if(err) {
                 //    done(null, false);
                 res.code = "401";
                 res.value = "Failed Login";

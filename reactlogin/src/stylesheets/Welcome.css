@@ -74,6 +74,15 @@
     float: left;
 }
 
+.new-folder-button{
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
 .share-button{
     line-height: 20px;
     padding: 0 16px;
@@ -94,7 +103,8 @@
     border-radius: 4px;
     outline: none;
     margin: 5px;
-    width: 150px;
+    width: 80px;
+    float: right;
 }
 
 .account-div{

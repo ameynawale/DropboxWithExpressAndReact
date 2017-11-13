@@ -12,4 +12,4 @@ class Starred extends React.Component{
     }
 }
 
-export default withRouter(Starred);
+export default Starred;

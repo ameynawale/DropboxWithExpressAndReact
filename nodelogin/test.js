@@ -9,7 +9,7 @@ var request = require('supertest');
 var server = require('./bin/www');
 
 const userCredentials = {
-    username: 'first1@last1.com',
+    username: 'first@last.com',
     password: 'password'
 }
 
@@ -24,7 +24,7 @@ describe('Server test', function() {
     describe('Get User Files', function () {
         it('Get User files successfully', function (done) {
             const newUser = {
-                username: 'first1@last1.com'
+                username: 'first@last.com'
             }
             authenticatedUser
                 .post('/users/files')
@@ -62,14 +62,14 @@ describe('Server test', function() {
                 const newUser = {
                     firstname: 'first',
                     lastname: 'last',
-                    email: 'first@last.com',
+                    username: 'first@last.com',
                     password: 'password'
                 }
                 authenticatedUser
                     .post('/users/doSignup')
                     .send(newUser)
                     .end(function (err, response) {
-                        expect(response.statusCode).to.equal(201);
+                        expect(response.statusCode).to.equal(401);
                         expect('Location', '/login');
                         done();
                     });
@@ -82,7 +82,7 @@ describe('Server test', function() {
             it('Files should be shared successfully', function (done) {
                 const newUser = {
                     emails: 'first1@last1.com',
-                    username: 'first2@last2.com',
+                    username: 'first@last.com',
                     activeItemName: 'shared file.txt'
                 }
                 authenticatedUser
@@ -100,8 +100,7 @@ describe('Server test', function() {
         describe('File Download', function () {
             it('Files should be downloaded successfully', function (done) {
                 const newUser = {
-                    emails: 'first1@last1.com',
-                    username: 'first2@last2.com',
+                    username: 'first@last.com',
                     activeItemName: 'shared file.txt'
                 }
                 authenticatedUser
@@ -110,6 +109,24 @@ describe('Server test', function() {
                     .end(function (err, response) {
                         //expect(response.statusCode).to.equal(201);
                         expect('Location', '/Welcome');
+                        done();
+                    });
+
+
+            });
+        });
+        describe('Create Folder', function () {
+            it('Folder should be created successfully', function (done) {
+                const newUser = {
+                    username: 'first@last.com',
+                    folder: 'TestFolder'
+                }
+                authenticatedUser
+                    .post('http://localhost:3001/users/createFolder')
+                    .send(newUser)
+                    .end(function (err, response) {
+                        expect(response.statusCode).to.equal(201);
+                        //expect('Location', '/Welcome');
                         done();
                     });
 

@@ -170,4 +170,4 @@ class UserProfile extends React.Component{
     }
 }
 
-export default withRouter(UserProfile);
+export default UserProfile;

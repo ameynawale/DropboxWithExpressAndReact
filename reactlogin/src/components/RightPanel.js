@@ -7,6 +7,8 @@ import Modal1 from 'react-modal';
 import {withStyles} from 'material-ui/styles';
 import * as API from '../api/API';
 import PropTypes from 'prop-types';
+import FileContainer from './FileContainer';
+//import FileInput from 'react-file-input';
 
 
 
@@ -73,7 +75,8 @@ class RightPanel extends React.Component{
             activeItemId: null,
             emails: '',
             folder: '',
-            groupname: ''
+            groupname: '',
+            images:[]
         };
 
         this.openModal = this.openModal.bind(this);
@@ -177,23 +180,6 @@ class RightPanel extends React.Component{
         return(
             <div className="rightParentContainer">
                 <button className="upload-button">Upload files</button>
-                <button class="mc-tertiary-link-button secondary-action-menu__button action-new-folder"
-                        onClick={() => this.openModal('test')}>
-                   <span class="mc-tertiary-link-button-content">
-                      <span class="mc-tertiary-icon-wrapper">
-                         <svg width="32" height="32" viewBox="0 0 32 32" class="mc-icon-template-actionable">
-                            <title>action-new-folder</title>
-                            <g fill="none" fill-rule="evenodd">
-                               <path fill="none" d="M0 0h32v32H0z"></path>
-                               <path d="M24 11.491c0-.823-.668-1.491-1.505-1.491H16l-2-2H9.499C8.67 8 8 8.664 8 9.493v12.014C8 22.332 8.667 23 9.505 23h12.99c.831 0 1.505-.663 1.505-1.491V11.49zM22 21H10v-9h12v9z" fill-rule="nonzero" fill="#0070E0"></path>
-                            </g>
-                         </svg>
-                      </span>
-                      <span class="mc-tertiary-icon-text">
-                         <div class="ue-effect-container uee-AppActionsView-SecondaryActionMenu-text-new-folder">New folder</div>
-                      </span>
-                   </span>
-                </button>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -274,20 +260,52 @@ class RightPanel extends React.Component{
                 </Modal1>
 
                 <TextField
-                    className={'fileupload'}
+                    className="fileupload"
                     type="file"
                     name="mypic"
                     onChange={this.handleFileUpload}
                 />
-                <button
-                    className="upload-button"
-                    onClick={() => this.openModal1('test')}
-                >
-                    Create Group
+                <button className="mc-tertiary-link-button secondary-action-menu__button action-new-folder"
+                        onClick={() => this.openModal('test')}>
+                   <span className="mc-tertiary-link-button-content"  style={{display: 'inline'}}>
+                      <span className="mc-tertiary-icon-wrapper">
+                         <svg width="32" height="32" viewBox="0 0 32 32" class="mc-icon-template-actionable">
+                            <title>action-new-folder</title>
+                            <g fill="none" fillRule="evenodd">
+                               <path fill="none" d="M0 0h32v32H0z"></path>
+                               <path d="M24 11.491c0-.823-.668-1.491-1.505-1.491H16l-2-2H9.499C8.67 8 8 8.664 8 9.493v12.014C8 22.332 8.667 23 9.505 23h12.99c.831 0 1.505-.663 1.505-1.491V11.49zM22 21H10v-9h12v9z" fillRule="nonzero" fill="#0070E0"></path>
+                            </g>
+                         </svg>
+                      </span>
+                      <span className="mc-tertiary-icon-text"  style={{display: 'inline'}}>
+                         <div className="ue-effect-container uee-AppActionsView-SecondaryActionMenu-text-new-folder">New folder</div>
+                      </span>
+                   </span>
                 </button>
+                <button
+                    className="mc-tertiary-link-button secondary-action-menu__button action-new-shared-folder"
+                    onClick={() => this.openModal1('')}
+                >
+                       <span className="mc-tertiary-link-button-content">
+                          <span className="mc-tertiary-icon-wrapper">
+                             <svg width="32" height="32" viewBox="0 0 32 32" class="mc-icon-template-actionable">
+                                <title>action-new-shared-folder</title>
+                                <g fill="none" fillRule="evenodd">
+                                   <path fill="none" d="M0 0h32v32H0z"></path>
+                                   <path d="M24 11.491c0-.823-.668-1.491-1.505-1.491H16l-2-2H9.499C8.67 8 8 8.664 8 9.493v12.5C8 22.549 8.445 23 9 23h14a1 1 0 0 0 1-.999v-10.51zM22 21H10v-9h12v9zm-11 0h10v2H11v-2z" fill="#0070E0" fillRule="nonzero"></path>
+                                   <path d="M16 23h-3.309c-.545 0-.809-.41-.575-.916l.334-.724c.347-.753 1.301-1.36 2.133-1.36h2.834c.832 0 1.786.607 2.133 1.36l.334.724c.234.506-.03.916-.575.916H16zm0-4a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="#0070E0"></path>
+                                </g>
+                             </svg>
+                          </span>
+                          <span className="mc-tertiary-icon-text">
+                             <div className="ue-effect-container uee-AppActionsView-SecondaryActionMenu-text-new-shared-folder">Create Group</div>
+                          </span>
+                       </span>
+                </button>
+
+
             </div>
         )
     }
 }
-
 export default withStyles(styles)(RightPanel);
